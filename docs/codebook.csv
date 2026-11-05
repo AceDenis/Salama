@@ -1,0 +1,639 @@
+﻿form,variable,label,measure,values,question_text,kind,note
+baseline_personnel,response_id,Response ID,nominal,,,meta,
+baseline_personnel,submitted_at,Date and time submitted,scale,,,meta,
+baseline_personnel,grp,Respondent group,nominal,,,meta,
+baseline_personnel,wave,Wave,nominal,,,meta,
+baseline_personnel,context,Check-in context,nominal,,,meta,
+baseline_personnel,unit_code,Unit group code,nominal,,,meta,
+baseline_personnel,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+baseline_personnel,protocol_version,Protocol version live when collected,nominal,,,meta,
+baseline_personnel,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+baseline_personnel,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+baseline_personnel,age,Age group,ordinal,1=18 to 24; 2=25 to 34; 3=35 to 44; 4=45 to 54; 5=55 or older,Age group,item,
+baseline_personnel,sex,Sex,nominal,1=Male; 2=Female; 3=Prefer not to say,Sex,item,
+baseline_personnel,rank,Rank category,nominal,1=Officer; 2=Other rank,Rank category,item,
+baseline_personnel,yos,Years of service,ordinal,1=Under 5; 2=5 to 9; 3=10 to 19; 4=20 or more,Years of service,item,
+baseline_personnel,service,Service,nominal,1=Army; 2=Navy; 3=Air Force; 4=Other or prefer not to say,Service,item,
+baseline_personnel,marital,Family situation,nominal,"1=Single; 2=Married or partnered; 3=Separated, divorced or widowed",Family situation,item,
+baseline_personnel,apart,Apart from family >3 months,nominal,1=Yes; 0=No,"In the last 12 months, were you apart from your family for more than 3 months because of a posting or deployment?",item,
+baseline_personnel,deploy,Deployments,ordinal,0=Never; 1=Once; 2=More than once,How many times have you been deployed on operations?,item,
+baseline_personnel,deploy_recent,Time since deployment,ordinal,1=Under 6 months; 2=6 to 12 months; 3=More than a year,How long since you last returned from deployment?,item,"asked only if deploy in [1, 2]"
+baseline_personnel,need12,Needed help in last 12 months,nominal,1=Yes; 0=No; 9=Prefer not to say,"In the last 12 months, did you feel you needed help for stress, low mood, anxiety, sleep, anger, money worries or alcohol use?",item,
+baseline_personnel,sought12,Sought help in last 12 months,nominal,1=Yes; 0=No,Did you seek help?,item,asked only if need12 in [1]
+baseline_personnel,src_friend,Help source: A friend or buddy,nominal,1=Ticked; 0=Not ticked,A friend or buddy [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_family,Help source: Family,nominal,1=Ticked; 0=Not ticked,Family [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_chaplain,Help source: Chaplain,nominal,1=Ticked; 0=Not ticked,Chaplain [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_welfare,Help source: Welfare officer,nominal,1=Ticked; 0=Not ticked,Welfare officer [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_nurse,Help source: Nurse,nominal,1=Ticked; 0=Not ticked,Nurse [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_doctor,Help source: Doctor,nominal,1=Ticked; 0=Not ticked,Doctor [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_psych,Help source: Psychologist or counsellor,nominal,1=Ticked; 0=Not ticked,Psychologist or counsellor [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_cmdr,Help source: Commander or supervisor,nominal,1=Ticked; 0=Not ticked,Commander or supervisor [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_faith,Help source: Faith or traditional healer outside the unit,nominal,1=Ticked; 0=Not ticked,Faith or traditional healer outside the unit [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,src_other,Help source: Someone else,nominal,1=Ticked; 0=Not ticked,Someone else [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_personnel,why_weak,Reason no help: I was afraid of being seen as weak,nominal,1=Ticked; 0=Not ticked,I was afraid of being seen as weak [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,why_cmdr,Reason no help: I was afraid my commander would treat me differently,nominal,1=Ticked; 0=Not ticked,I was afraid my commander would treat me differently [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,why_conf,Reason no help: I was afraid my record would not stay confidential,nominal,1=Ticked; 0=Not ticked,I was afraid my record would not stay confidential [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,why_where,Reason no help: I did not know where to go,nominal,1=Ticked; 0=Not ticked,I did not know where to go [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,why_time,Reason no help: No time because of duty,nominal,1=Ticked; 0=Not ticked,No time because of duty [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,why_pass,Reason no help: I thought it would pass by itself,nominal,1=Ticked; 0=Not ticked,I thought it would pass by itself [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,why_staff,Reason no help: No trained staff close to me,nominal,1=Ticked; 0=Not ticked,No trained staff close to me [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,why_cost,Reason no help: Cost or transport,nominal,1=Ticked; 0=Not ticked,Cost or transport [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_personnel,firstgo,First choice of help today,nominal,0=Nobody; 1=A friend or buddy; 2=Family; 3=Chaplain; 4=Welfare officer; 5=Nurse; 6=Doctor; 7=Psychologist or counsellor; 8=A phone app or website; 9=Alcohol or something else,"If you needed help today, where would you go first?",item,
+baseline_personnel,st1,Stigma: look weak,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Seeking help would make me look weak.,item,
+baseline_personnel,st2,Stigma: commander treats differently,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My commander would treat me differently if I sought help.,item,
+baseline_personnel,st3,Stigma: records not confidential,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My records would not stay confidential.,item,
+baseline_personnel,st4,Stigma: harm career,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"Seeking help would harm my career (promotion, postings or deployment).",item,
+baseline_personnel,st5,Stigma: colleagues think less,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My colleagues would think less of me.,item,
+baseline_personnel,co1,Confidentiality fear: result reaches commander,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I worry that a screening result could reach my commander.,item,
+baseline_personnel,co2,Prefer private phone check,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would prefer to get a first check privately on my phone.,item,
+baseline_personnel,co3,Trust more if only nurse sees,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would trust a phone service more if only a nurse could see my result.,item,
+baseline_personnel,co4,More likely if buddy recommends,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would be more likely to use a service that a trusted buddy or peer champion recommends.,item,
+baseline_personnel,co5,Fear of discipline if money problem admitted,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would be afraid to admit a money problem (such as a loan or a held ID card) because of discipline.,item,
+baseline_personnel,hsi_nurse,Intention: nurse,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a nurse?,item,
+baseline_personnel,hsi_chaplain,Intention: chaplain,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a chaplain?,item,
+baseline_personnel,hsi_welfare,Intention: welfare officer,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a welfare officer?,item,
+baseline_personnel,hsi_buddy,Intention: buddy,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a buddy or friend in the unit?,item,
+baseline_personnel,hsi_cmdr,Intention: commander,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to your commander?,item,
+baseline_personnel,hsi_app,Intention: phone service,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to use a private phone service?,item,
+baseline_personnel,hsi_none,Intention: nobody,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to nobody at all?,item,
+baseline_personnel,aw_support,Aware of mental health support,ordinal,1=Yes; 2=A little; 3=No,Do you know where to get mental health support in your unit or garrison?,item,
+baseline_personnel,aw_gbv,Aware of help for violence at home,ordinal,1=Yes; 2=A little; 3=No,Do you know where to get help if there is violence or fear at home?,item,
+baseline_personnel,fm_needs,Ran out of money for basic needs,ordinal,0=Never; 1=Once or twice; 2=Several times; 3=Most of the month,"Over the last month, how often did you run out of money for basic needs (food, rent, school fees, transport) before the next pay day?",item,
+baseline_personnel,fm_share,Share of pay on repayments and deductions,nominal,0=None; 1=Less than a quarter; 2=A quarter to a half; 3=More than half; 9=Prefer not to say,About what share of your pay each month goes on repaying loans and deductions?,item,
+baseline_personnel,fm_borrow,Borrowed from informal lender in last 3 months,nominal,"0=No; 1=Yes, once or twice; 2=Yes, several times; 9=Prefer not to say","In the last 3 months, did you borrow money from a lender who is not a bank, SACCO or welfare scheme? For example, a daily, weekly or monthly lender ('shylock') who calls or messages you for repayment.",item,"sensitive item, can be switched off in web/config.js"
+baseline_personnel,fm_cost,Repayment much higher than borrowed,nominal,1=Yes; 0=No; 2=Not sure,Did you have to repay much more than you borrowed (for example 30% or more extra within a month)?,item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,sec_atm,Security held: ATM or bank card,nominal,1=Ticked; 0=Not ticked,A bank or ATM card [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,sec_phone,Security held: phone,nominal,1=Ticked; 0=Not ticked,A phone [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,sec_id,Security held: military ID card,nominal,1=Ticked; 0=Not ticked,A military ID card [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,sec_doc,Security held: other documents,nominal,1=Ticked; 0=Not ticked,Other documents (for example a title deed or logbook) [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,sec_item,Security held: other belongings,nominal,1=Ticked; 0=Not ticked,Other belongings [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,sec_none,Security held: nothing,nominal,1=Ticked; 0=Not ticked,Nothing [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,fm_lost,Reported ID/card lost while held by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Have you reported a card or ID as lost, or asked for a replacement, when it was actually being held by a lender?",item,"asked only if sec_id in [1]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,fm_threat,Threatened or harassed by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Has a lender or someone you owe threatened, shamed or harassed you or your family (calls, messages to your contacts, visits)?",item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,fm_effect,"Effect of money worries on sleep, mood, home",ordinal,0=Not at all; 1=A little; 2=A lot; 3=Extremely,"How much have money worries affected your sleep, mood or home life this month?",item,
+baseline_personnel,fm_know,Knows where to get money help,ordinal,1=Yes; 2=A little; 3=No,"Do you know where to get safe, confidential money help (welfare officer, SACCO, financial counselling)?",item,
+baseline_personnel,bt1,"Betting frequency, last 3 months",ordinal,0=Never; 1=Monthly or less; 2=Weekly; 3=Most days; 9=Prefer not to say,"In the last 3 months, how often have you bet money (sports betting, casino, lottery or betting apps)?",item,"sensitive item, can be switched off in web/config.js"
+baseline_personnel,bt2,Lie/Bet: need to bet more,nominal,1=Yes; 0=No; 9=Prefer not to say,Have you ever felt the need to bet more and more money?,item,"asked only if bt1 in [1, 2, 3]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,bt3,Lie/Bet: lied about betting,nominal,1=Yes; 0=No; 9=Prefer not to say,Have you ever had to lie to people important to you about how much you bet?,item,"asked only if bt1 in [1, 2, 3]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,bt4,Betting led to borrowing,nominal,1=Yes; 0=No; 9=Prefer not to say,"Has betting led you to borrow money, including from an informal lender?",item,"asked only if bt1 in [1, 2, 3]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,po1,"Altercation with civilian police, last 12 months",ordinal,"0=No; 1=Yes, once; 2=Yes, more than once; 9=Prefer not to say","In the last 12 months, have you had an argument, confrontation or physical altercation with a civilian police officer (for example at a roadblock, on patrol, in a bar or in a dispute with a civilian)?",item,"sensitive item, can be switched off in web/config.js"
+baseline_personnel,po2,Setting of police altercation,nominal,"1=Traffic or a roadblock; 2=A bar, club or social place; 3=A dispute with a civilian (money, neighbour, relationship); 4=A debt or loan matter; 5=While off duty or on leave; 6=Something else; 9=Prefer not to say",What was the main setting?,item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,po3,Alcohol involved in police altercation,nominal,1=Yes; 0=No; 9=Prefer not to say,Was alcohol involved?,item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,po4,Outcome of police altercation,nominal,1=Sorted out on the spot; 2=Detained for a short time; 3=Charged or taken to court; 4=Reported to my unit or college; 9=Prefer not to say,What happened afterwards?,item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,po5,Got help after police altercation,nominal,1=Yes; 0=No; 2=I did not know who to ask; 9=Prefer not to say,"Did you get help afterwards (welfare, legal officer, a senior or a friend)?",item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_personnel,po6,Feels fairly treated by civilian police,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"When I am off duty, I feel civilian police treat me fairly.",item,
+baseline_personnel,po7,Worry small police incident becomes discipline case,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I worry that a small incident with civilian police could become a discipline or legal case that harms my career.,item,
+baseline_personnel,po8,Knows who to contact if held by police,ordinal,1=Yes; 2=A little; 3=No,"Do you know who to contact (legal officer, welfare officer or military police liaison) if you are held by civilian police?",item,
+baseline_personnel,phone,Smartphone access,nominal,"1=Yes, my own; 2=Shared with others; 3=No",Do you have a smartphone?,item,
+baseline_personnel,data,Data access,ordinal,1=Regularly; 2=Sometimes; 3=Rarely,How often can you use mobile data or Wi-Fi?,item,
+baseline_personnel,appcomfort,App comfort,ordinal,1=Not comfortable; 2=A little; 3=Fairly; 4=Comfortable; 5=Very comfortable,How comfortable are you using phone apps?,item,
+baseline_personnel,fm_informal,"Borrowed from an informal lender in last 3 months (1 yes, 0 no, blank = not answered or prefer not to say)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+baseline_personnel,fm_security_any,"A lender held at least one item as security (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+baseline_personnel,fm_strain,"Money strain: ran out of money several times or more than a quarter of pay on repayments (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+baseline_family,response_id,Response ID,nominal,,,meta,
+baseline_family,submitted_at,Date and time submitted,scale,,,meta,
+baseline_family,grp,Respondent group,nominal,,,meta,
+baseline_family,wave,Wave,nominal,,,meta,
+baseline_family,context,Check-in context,nominal,,,meta,
+baseline_family,unit_code,Unit group code,nominal,,,meta,
+baseline_family,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+baseline_family,protocol_version,Protocol version live when collected,nominal,,,meta,
+baseline_family,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+baseline_family,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+baseline_family,age,Age group,ordinal,1=18 to 24; 2=25 to 34; 3=35 to 44; 4=45 to 54; 5=55 or older,Age group,item,
+baseline_family,sex,Sex,nominal,1=Male; 2=Female; 3=Prefer not to say,Sex,item,
+baseline_family,relation,Relationship to serving member,nominal,"1=Spouse or partner; 2=Parent; 3=Adult child or sibling; 4=Widow, widower or bereaved relative; 5=Other",Your relationship to the serving member,item,
+baseline_family,fyears,Years in military family,ordinal,1=Under 5 years; 2=5 to 9 years; 3=10 to 19 years; 4=20 years or more,How long has your family been connected to the forces?,item,
+baseline_family,children,Children at home,nominal,1=Yes; 0=No,Do you have children living with you?,item,
+baseline_family,living,Living situation,nominal,1=Barracks or garrison housing; 2=Own or rented home near the unit; 3=Home area away from the unit,Where do you live?,item,
+baseline_family,apart,Member away >3 months,nominal,1=Yes; 0=No,"In the last 12 months, was your family member away on posting or deployment for more than 3 months?",item,
+baseline_family,need12,Needed help in last 12 months,nominal,1=Yes; 0=No; 9=Prefer not to say,"In the last 12 months, did you feel you needed help for stress, low mood, anxiety, sleep, anger, money worries or alcohol use?",item,
+baseline_family,sought12,Sought help in last 12 months,nominal,1=Yes; 0=No,Did you seek help?,item,asked only if need12 in [1]
+baseline_family,src_friend,Help source: A friend or buddy,nominal,1=Ticked; 0=Not ticked,A friend or buddy [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_family,Help source: Family,nominal,1=Ticked; 0=Not ticked,Family [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_chaplain,Help source: Chaplain,nominal,1=Ticked; 0=Not ticked,Chaplain [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_welfare,Help source: Welfare officer,nominal,1=Ticked; 0=Not ticked,Welfare officer [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_nurse,Help source: Nurse,nominal,1=Ticked; 0=Not ticked,Nurse [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_doctor,Help source: Doctor,nominal,1=Ticked; 0=Not ticked,Doctor [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_psych,Help source: Psychologist or counsellor,nominal,1=Ticked; 0=Not ticked,Psychologist or counsellor [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_cmdr,Help source: Commander or supervisor,nominal,1=Ticked; 0=Not ticked,Commander or supervisor [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_faith,Help source: Faith or traditional healer outside the unit,nominal,1=Ticked; 0=Not ticked,Faith or traditional healer outside the unit [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,src_other,Help source: Someone else,nominal,1=Ticked; 0=Not ticked,Someone else [Who did you go to? (tick all that apply)],item,asked only if sought12 in [1]
+baseline_family,why_weak,Reason no help: I was afraid of being seen as weak,nominal,1=Ticked; 0=Not ticked,I was afraid of being seen as weak [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,why_cmdr,Reason no help: I was afraid my commander would treat me differently,nominal,1=Ticked; 0=Not ticked,I was afraid my commander would treat me differently [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,why_conf,Reason no help: I was afraid my record would not stay confidential,nominal,1=Ticked; 0=Not ticked,I was afraid my record would not stay confidential [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,why_where,Reason no help: I did not know where to go,nominal,1=Ticked; 0=Not ticked,I did not know where to go [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,why_time,Reason no help: No time because of duty,nominal,1=Ticked; 0=Not ticked,No time because of duty [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,why_pass,Reason no help: I thought it would pass by itself,nominal,1=Ticked; 0=Not ticked,I thought it would pass by itself [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,why_staff,Reason no help: No trained staff close to me,nominal,1=Ticked; 0=Not ticked,No trained staff close to me [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,why_cost,Reason no help: Cost or transport,nominal,1=Ticked; 0=Not ticked,Cost or transport [Why did you not seek help? (tick all that apply)],item,asked only if sought12 in [0]
+baseline_family,firstgo,First choice of help today,nominal,0=Nobody; 1=A friend or buddy; 2=Family; 3=Chaplain; 4=Welfare officer; 5=Nurse; 6=Doctor; 7=Psychologist or counsellor; 8=A phone app or website; 9=Alcohol or something else,"If you needed help today, where would you go first?",item,
+baseline_family,st1,Stigma: look weak,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Seeking help would make me look weak.,item,
+baseline_family,st2,Stigma: commander treats differently,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My commander would treat me differently if I sought help.,item,
+baseline_family,st3,Stigma: records not confidential,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My records would not stay confidential.,item,
+baseline_family,st4,Stigma: harm career,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"Seeking help would harm my career (promotion, postings or deployment).",item,
+baseline_family,st5,Stigma: colleagues think less,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My colleagues would think less of me.,item,
+baseline_family,co1,Confidentiality fear: result reaches commander,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I worry that a screening result could reach my commander.,item,
+baseline_family,co2,Prefer private phone check,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would prefer to get a first check privately on my phone.,item,
+baseline_family,co3,Trust more if only nurse sees,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would trust a phone service more if only a nurse could see my result.,item,
+baseline_family,co4,More likely if buddy recommends,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would be more likely to use a service that a trusted buddy or peer champion recommends.,item,
+baseline_family,co5,Fear of discipline if money problem admitted,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would be afraid to admit a money problem (such as a loan or a held ID card) because of discipline.,item,
+baseline_family,hsi_nurse,Intention: nurse,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a nurse?,item,
+baseline_family,hsi_chaplain,Intention: chaplain,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a chaplain?,item,
+baseline_family,hsi_welfare,Intention: welfare officer,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a welfare officer?,item,
+baseline_family,hsi_buddy,Intention: buddy,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a buddy or friend in the unit?,item,
+baseline_family,hsi_cmdr,Intention: commander,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to your commander?,item,
+baseline_family,hsi_app,Intention: phone service,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to use a private phone service?,item,
+baseline_family,hsi_none,Intention: nobody,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to nobody at all?,item,
+baseline_family,aw_support,Aware of mental health support,ordinal,1=Yes; 2=A little; 3=No,Do you know where to get mental health support in your unit or garrison?,item,
+baseline_family,aw_gbv,Aware of help for violence at home,ordinal,1=Yes; 2=A little; 3=No,Do you know where to get help if there is violence or fear at home?,item,
+baseline_family,fm_needs,Ran out of money for basic needs,ordinal,0=Never; 1=Once or twice; 2=Several times; 3=Most of the month,"Over the last month, how often did you run out of money for basic needs (food, rent, school fees, transport) before the next pay day?",item,
+baseline_family,fm_share,Share of pay on repayments and deductions,nominal,0=None; 1=Less than a quarter; 2=A quarter to a half; 3=More than half; 9=Prefer not to say,About what share of your pay each month goes on repaying loans and deductions?,item,
+baseline_family,fm_borrow,Borrowed from informal lender in last 3 months,nominal,"0=No; 1=Yes, once or twice; 2=Yes, several times; 9=Prefer not to say","In the last 3 months, did you borrow money from a lender who is not a bank, SACCO or welfare scheme? For example, a daily, weekly or monthly lender ('shylock') who calls or messages you for repayment.",item,"sensitive item, can be switched off in web/config.js"
+baseline_family,fm_cost,Repayment much higher than borrowed,nominal,1=Yes; 0=No; 2=Not sure,Did you have to repay much more than you borrowed (for example 30% or more extra within a month)?,item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,sec_atm,Security held: ATM or bank card,nominal,1=Ticked; 0=Not ticked,A bank or ATM card [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,sec_phone,Security held: phone,nominal,1=Ticked; 0=Not ticked,A phone [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,sec_id,Security held: military ID card,nominal,1=Ticked; 0=Not ticked,A military ID card [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,sec_doc,Security held: other documents,nominal,1=Ticked; 0=Not ticked,Other documents (for example a title deed or logbook) [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,sec_item,Security held: other belongings,nominal,1=Ticked; 0=Not ticked,Other belongings [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,sec_none,Security held: nothing,nominal,1=Ticked; 0=Not ticked,Nothing [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,fm_lost,Reported ID/card lost while held by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Have you reported a card or ID as lost, or asked for a replacement, when it was actually being held by a lender?",item,"asked only if sec_id in [1]; sensitive item, can be switched off in web/config.js"
+baseline_family,fm_threat,Threatened or harassed by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Has a lender or someone you owe threatened, shamed or harassed you or your family (calls, messages to your contacts, visits)?",item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+baseline_family,fm_effect,"Effect of money worries on sleep, mood, home",ordinal,0=Not at all; 1=A little; 2=A lot; 3=Extremely,"How much have money worries affected your sleep, mood or home life this month?",item,
+baseline_family,fm_know,Knows where to get money help,ordinal,1=Yes; 2=A little; 3=No,"Do you know where to get safe, confidential money help (welfare officer, SACCO, financial counselling)?",item,
+baseline_family,phone,Smartphone access,nominal,"1=Yes, my own; 2=Shared with others; 3=No",Do you have a smartphone?,item,
+baseline_family,data,Data access,ordinal,1=Regularly; 2=Sometimes; 3=Rarely,How often can you use mobile data or Wi-Fi?,item,
+baseline_family,appcomfort,App comfort,ordinal,1=Not comfortable; 2=A little; 3=Fairly; 4=Comfortable; 5=Very comfortable,How comfortable are you using phone apps?,item,
+baseline_family,fm_informal,"Borrowed from an informal lender in last 3 months (1 yes, 0 no, blank = not answered or prefer not to say)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+baseline_family,fm_security_any,"A lender held at least one item as security (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+baseline_family,fm_strain,"Money strain: ran out of money several times or more than a quarter of pay on repayments (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,response_id,Response ID,nominal,,,meta,
+checkin,submitted_at,Date and time submitted,scale,,,meta,
+checkin,grp,Respondent group,nominal,,,meta,
+checkin,wave,Wave,nominal,,,meta,
+checkin,context,Check-in context,nominal,,,meta,
+checkin,unit_code,Unit group code,nominal,,,meta,
+checkin,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+checkin,protocol_version,Protocol version live when collected,nominal,,,meta,
+checkin,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+checkin,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+checkin,phq_1,PHQ-9 item 1,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Little interest or pleasure in doing things,item,
+checkin,phq_2,PHQ-9 item 2,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling down, depressed or hopeless",item,
+checkin,phq_3,PHQ-9 item 3,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Trouble falling or staying asleep, or sleeping too much",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+checkin,phq_4,PHQ-9 item 4,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Feeling tired or having little energy,item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+checkin,phq_5,PHQ-9 item 5,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Poor appetite or overeating,item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+checkin,phq_6,PHQ-9 item 6,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling bad about yourself, or that you are a failure or have let yourself or your family down",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+checkin,phq_7,PHQ-9 item 7,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Trouble concentrating on things, such as reading or watching television",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+checkin,phq_8,PHQ-9 item 8,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Moving or speaking so slowly that other people could have noticed, or being so fidgety or restless that you have been moving around a lot more than usual",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+checkin,phq_9,PHQ-9 item 9,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Thoughts that you would be better off dead, or of hurting yourself in some way",item,
+checkin,gad_1,GAD-7 item 1,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling nervous, anxious or on edge",item,
+checkin,gad_2,GAD-7 item 2,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Not being able to stop or control worrying,item,
+checkin,gad_3,GAD-7 item 3,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Worrying too much about different things,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+checkin,gad_4,GAD-7 item 4,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Trouble relaxing,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+checkin,gad_5,GAD-7 item 5,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Being so restless that it is hard to sit still,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+checkin,gad_6,GAD-7 item 6,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Becoming easily annoyed or irritable,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+checkin,gad_7,GAD-7 item 7,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling afraid, as if something awful might happen",item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+checkin,ptsd_gate,PC-PTSD-5 exposure,nominal,1=Yes; 0=No,"Sometimes things happen to people that are unusually or especially frightening, horrible or traumatic. For example: a serious accident or fire; a physical or sexual assault or abuse; a disaster; a war or attack; seeing someone be killed or seriously injured; or having a loved one die through homicide or suicide. Have you ever experienced this kind of event?",item,
+checkin,ptsd_1,PC-PTSD-5 item 1,nominal,1=Yes; 0=No,Had nightmares about the event(s) or thought about the event(s) when you did not want to?,item,asked only if ptsd_gate in [1]
+checkin,ptsd_2,PC-PTSD-5 item 2,nominal,1=Yes; 0=No,Tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?,item,asked only if ptsd_gate in [1]
+checkin,ptsd_3,PC-PTSD-5 item 3,nominal,1=Yes; 0=No,"Been constantly on guard, watchful or easily startled?",item,asked only if ptsd_gate in [1]
+checkin,ptsd_4,PC-PTSD-5 item 4,nominal,1=Yes; 0=No,"Felt numb or detached from other people, activities or your surroundings?",item,asked only if ptsd_gate in [1]
+checkin,ptsd_5,PC-PTSD-5 item 5,nominal,1=Yes; 0=No,Felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?,item,asked only if ptsd_gate in [1]
+checkin,ac1,AUDIT-C item 1,ordinal,0=Never; 1=Monthly or less; 2=2 to 4 times a month; 3=2 to 3 times a week; 4=4 or more times a week,How often do you have a drink containing alcohol?,item,
+checkin,ac2,AUDIT-C item 2,ordinal,0=1 or 2; 1=3 or 4; 2=5 or 6; 3=7 to 9; 4=10 or more,"How many drinks do you have on a typical day when you are drinking? (One drink is about one 330 ml bottle of beer, one small glass of wine or one tot of spirits.)",item,"asked only if ac1 in [1, 2, 3, 4]"
+checkin,ac3,AUDIT-C item 3,ordinal,0=Never; 1=Less than monthly; 2=Monthly; 3=Weekly; 4=Daily or almost daily,How often do you have six or more drinks on one occasion?,item,"asked only if ac1 in [1, 2, 3, 4]"
+checkin,lp1,Life pressure: Money or debt,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Money or debt,item,
+checkin,lp2,Life pressure: Being away from family or long postings,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Being away from family or long postings,item,
+checkin,lp3,Life pressure: Conflict at home,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Conflict at home,item,
+checkin,lp4,Life pressure: Housing or family welfare,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Housing or family welfare,item,
+checkin,lp5,Life pressure: Workload and rest,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Workload and rest,item,
+checkin,lp6,Life pressure: Treatment by superiors or colleagues,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Treatment by superiors or colleagues,item,
+checkin,lp7,Life pressure: Fear for safety on duty,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Fear for safety on duty,item,
+checkin,lp8,Life pressure: Bereavement or loss,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Bereavement or loss,item,
+checkin,lp9,Life pressure: Worry about career or discharge,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Worry about career or discharge,item,
+checkin,lp10,Life pressure: Loneliness,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Loneliness,item,
+checkin,fm_needs,Ran out of money for basic needs,ordinal,0=Never; 1=Once or twice; 2=Several times; 3=Most of the month,"Over the last month, how often did you run out of money for basic needs (food, rent, school fees, transport) before the next pay day?",item,
+checkin,fm_share,Share of pay on repayments and deductions,nominal,0=None; 1=Less than a quarter; 2=A quarter to a half; 3=More than half; 9=Prefer not to say,About what share of your pay each month goes on repaying loans and deductions?,item,
+checkin,fm_borrow,Borrowed from informal lender in last 3 months,nominal,"0=No; 1=Yes, once or twice; 2=Yes, several times; 9=Prefer not to say","In the last 3 months, did you borrow money from a lender who is not a bank, SACCO or welfare scheme? For example, a daily, weekly or monthly lender ('shylock') who calls or messages you for repayment.",item,"sensitive item, can be switched off in web/config.js"
+checkin,fm_cost,Repayment much higher than borrowed,nominal,1=Yes; 0=No; 2=Not sure,Did you have to repay much more than you borrowed (for example 30% or more extra within a month)?,item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,sec_atm,Security held: ATM or bank card,nominal,1=Ticked; 0=Not ticked,A bank or ATM card [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,sec_phone,Security held: phone,nominal,1=Ticked; 0=Not ticked,A phone [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,sec_id,Security held: military ID card,nominal,1=Ticked; 0=Not ticked,A military ID card [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,sec_doc,Security held: other documents,nominal,1=Ticked; 0=Not ticked,Other documents (for example a title deed or logbook) [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,sec_item,Security held: other belongings,nominal,1=Ticked; 0=Not ticked,Other belongings [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,sec_none,Security held: nothing,nominal,1=Ticked; 0=Not ticked,Nothing [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,fm_lost,Reported ID/card lost while held by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Have you reported a card or ID as lost, or asked for a replacement, when it was actually being held by a lender?",item,"asked only if sec_id in [1]; sensitive item, can be switched off in web/config.js"
+checkin,fm_threat,Threatened or harassed by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Has a lender or someone you owe threatened, shamed or harassed you or your family (calls, messages to your contacts, visits)?",item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+checkin,fm_effect,"Effect of money worries on sleep, mood, home",ordinal,0=Not at all; 1=A little; 2=A lot; 3=Extremely,"How much have money worries affected your sleep, mood or home life this month?",item,
+checkin,fm_know,Knows where to get money help,ordinal,1=Yes; 2=A little; 3=No,"Do you know where to get safe, confidential money help (welfare officer, SACCO, financial counselling)?",item,
+checkin,sr_money,Stressor ticked: Money or debt,nominal,1=Ticked; 0=Not ticked,Money or debt [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_lender,Stressor ticked: Pressure from a lender or someone I owe,nominal,1=Ticked; 0=Not ticked,Pressure from a lender or someone I owe [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_posting,"Stressor ticked: Posting, deployment or being away",nominal,1=Ticked; 0=Not ticked,"Posting, deployment or being away [What are the biggest things weighing on you now? (tick up to 3)]",item,
+checkin,sr_homefight,Stressor ticked: Conflict or tension at home,nominal,1=Ticked; 0=Not ticked,Conflict or tension at home [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_kids,"Stressor ticked: Children, school fees or family needs",nominal,1=Ticked; 0=Not ticked,"Children, school fees or family needs [What are the biggest things weighing on you now? (tick up to 3)]",item,
+checkin,sr_health,Stressor ticked: My health or illness,nominal,1=Ticked; 0=Not ticked,My health or illness [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_work,"Stressor ticked: Work, leadership, discipline or workload",nominal,1=Ticked; 0=Not ticked,"Work, leadership, discipline or workload [What are the biggest things weighing on you now? (tick up to 3)]",item,
+checkin,sr_loss,Stressor ticked: A loss or bereavement,nominal,1=Ticked; 0=Not ticked,A loss or bereavement [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_online,Stressor ticked: Things I see online or in the news,nominal,1=Ticked; 0=Not ticked,Things I see online or in the news [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_lonely,Stressor ticked: Loneliness,nominal,1=Ticked; 0=Not ticked,Loneliness [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_alcohol,Stressor ticked: Alcohol,nominal,1=Ticked; 0=Not ticked,Alcohol [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_safety,Stressor ticked: Fear for safety (on duty or at home),nominal,1=Ticked; 0=Not ticked,Fear for safety (on duty or at home) [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_career,"Stressor ticked: Career, promotion or discharge",nominal,1=Ticked; 0=Not ticked,"Career, promotion or discharge [What are the biggest things weighing on you now? (tick up to 3)]",item,
+checkin,sr_other,Stressor ticked: Something else,nominal,1=Ticked; 0=Not ticked,Something else [What are the biggest things weighing on you now? (tick up to 3)],item,
+checkin,sr_text,Stressor in own words,nominal,"(free text, see v_free_text)","In your own words, what is weighing on you most right now? Please do not write names, lender details, service numbers or places.",text,not in the flat view
+checkin,h1,Home tension trend,nominal,1=Much better; 2=A little better; 3=About the same; 4=A little worse; 5=Much worse; 9=Prefer not to say,"Over the last 12 months, have arguments or tension at home become better or worse?",item,
+checkin,h2,Hurt or frightened at home,nominal,1=Yes; 0=No; 9=Prefer not to say,"In the last 12 months, has anyone at home hurt, threatened or frightened you?",item,
+checkin,h3,Worry own anger or drinking harms home,nominal,1=Yes; 0=No; 9=Prefer not to say,Have you worried that your own anger or drinking has hurt or frightened someone at home?,item,
+checkin,phq9,PHQ-9 total (0-27),scale,,,derived,calculated in the database view
+checkin,gad7,GAD-7 total (0-21),scale,,,derived,calculated in the database view
+checkin,ptsd5,PC-PTSD-5 total (0-5),scale,,,derived,calculated in the database view
+checkin,auditc,AUDIT-C total (0-12),scale,,,derived,calculated in the database view
+checkin,lifestress,Life stress total (0-20),scale,,,derived,calculated in the database view
+checkin,phq9_short,"PHQ-9 answered as adaptive short form (1 = items 3 to 8 not asked, scored 0)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,gad7_short,"GAD-7 answered as adaptive short form (1 = items 3 to 7 not asked, scored 0)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,phq9_pos,PHQ-9 screen positive (total 10 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,gad7_pos,GAD-7 screen positive (total 10 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,ptsd5_pos,PC-PTSD-5 screen positive (total 3 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,auditc_pos,AUDIT-C above low risk (total 4 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,lifestress_high,High life-pressure load (total 8 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,fm_informal,"Borrowed from an informal lender in last 3 months (1 yes, 0 no, blank = not answered or prefer not to say)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,fm_security_any,"A lender held at least one item as security (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,fm_strain,"Money strain: ran out of money several times or more than a quarter of pay on repayments (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+checkin,sr_count,Number of stressors ticked (0 to 3),scale,,,derived,calculated in the database view
+pulse,response_id,Response ID,nominal,,,meta,
+pulse,submitted_at,Date and time submitted,scale,,,meta,
+pulse,grp,Respondent group,nominal,,,meta,
+pulse,wave,Wave,nominal,,,meta,
+pulse,context,Check-in context,nominal,,,meta,
+pulse,unit_code,Unit group code,nominal,,,meta,
+pulse,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+pulse,protocol_version,Protocol version live when collected,nominal,,,meta,
+pulse,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+pulse,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+pulse,pl_sleep,Pulse: sleep,ordinal,1=Good; 2=Fair; 3=Poor; 4=Very poor,How has your sleep been this week?,item,
+pulse,pl_stress,Pulse: stress,ordinal,1=Not at all; 2=A little; 3=Moderately; 4=Very; 5=Extremely,How stressed do you feel this week?,item,
+pulse,pl_money,Pulse: worry about money or debt,ordinal,1=Not at all; 2=A little; 3=Quite a lot; 4=Very worried,How worried have you been about money or debt this week?,item,
+pulse,pl_cue,Pulse: main pressure this week,nominal,"0=Nothing in particular; 1=Money or pay; 2=Debt, a loan or a lender; 3=News about operations, deployment or postings; 4=Family or home; 5=Things I see online or on social media; 6=A loss or bad news in my unit or family; 7=My health or illness; 8=Work, leadership or discipline; 9=Something else",What is weighing on you most this week?,item,
+pulse,pl_news,Pulse: affected by recent events,ordinal,"2=Yes, a lot; 1=A little; 0=No","Has something that happened recently (in the news, your unit or your community) affected how you feel?",item,
+pulse,pl_home,Pulse: home calm and safe,nominal,1=Very tense or unsafe; 2=Tense; 3=Mixed; 4=Calm; 5=Very calm; 9=Prefer not to say,How calm and safe has home been this week?,item,
+pulse,pl_buddy,Pulse: buddy contact,nominal,0=Neither; 1=I checked on someone; 2=Someone checked on me; 3=Both,"Did you check on a colleague, or did someone check on you?",item,
+pulse,pl_text,Pulse: own words,nominal,"(free text, see v_free_text)","In your own words, anything else weighing on you? Please do not write names, lender details, service numbers or places.",text,not in the flat view
+pulse,pl_poor_sleep,Poor or very poor sleep this week,nominal,1=Yes; 0=No,,derived,calculated in the database view
+pulse,pl_high_stress,Very or extremely stressed this week,nominal,1=Yes; 0=No,,derived,calculated in the database view
+pulse,pl_money_worry,Quite a lot or very worried about money or debt this week,nominal,1=Yes; 0=No,,derived,calculated in the database view
+informant,response_id,Response ID,nominal,,,meta,
+informant,submitted_at,Date and time submitted,scale,,,meta,
+informant,grp,Respondent group,nominal,,,meta,
+informant,wave,Wave,nominal,,,meta,
+informant,context,Check-in context,nominal,,,meta,
+informant,unit_code,Unit group code,nominal,,,meta,
+informant,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+informant,protocol_version,Protocol version live when collected,nominal,,,meta,
+informant,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+informant,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+informant,i_role,Informant role,nominal,"1=Psychiatrist, psychologist or counsellor; 2=Mental health or general nurse; 3=Medical officer or clinician; 4=Chaplain or faith leader; 5=Welfare officer or social worker; 6=Commander or administrator; 7=Military police, legal or gender-violence desk; 8=ICT or records officer; 9=Public health, finance or policy; 10=Other; 11=DCHS lecturer, student counsellor, registrar or admissions officer",Your main role,item,
+informant,i_years,Years in role,ordinal,1=Under 2; 2=2 to 5; 3=6 to 10; 4=More than 10,Years in this kind of work,item,
+informant,i_org,Organisation type,nominal,1=Military health facility; 2=Unit or garrison; 3=Ministry of Defence or headquarters; 4=Civilian health or social service; 5=Other; 6=Defence College of Health Sciences or NDU-Kenya,Where do you mainly work?,item,
+informant,i_basis_cases,Basis: own cases,nominal,1=Ticked; 0=Not ticked,Cases I have handled [What are your answers based on? (tick all that apply)],item,
+informant,i_basis_records,Basis: records,nominal,1=Ticked; 0=Not ticked,Records or reports I can see [What are your answers based on? (tick all that apply)],item,
+informant,i_basis_talk,Basis: conversations,nominal,1=Ticked; 0=Not ticked,What colleagues and personnel tell me [What are your answers based on? (tick all that apply)],item,
+informant,t_depr,Trend (personnel): Depression or low mood,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Depression or low mood,item,
+informant,t_anx,Trend (personnel): Anxiety and stress reactions,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Anxiety and stress reactions,item,
+informant,t_ptsd,Trend (personnel): Post-traumatic stress symptoms,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Post-traumatic stress symptoms,item,
+informant,t_sui_t,Trend (personnel): Suicidal thoughts or attempts,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Suicidal thoughts or attempts,item,
+informant,t_sui_d,Trend (personnel): Deaths by suicide,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Deaths by suicide,item,
+informant,t_alc,Trend (personnel): Harmful alcohol or drug use,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Harmful alcohol or drug use,item,
+informant,t_anger,"Trend (personnel): Anger, aggression or discipline problems linked to mental health",ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,"Anger, aggression or discipline problems linked to mental health",item,
+informant,t_fv_perp,Trend (personnel): Personnel reported as perpetrators of violence at home,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Personnel reported as perpetrators of violence at home,item,
+informant,t_rel,Trend (personnel): Relationship breakdown or separation,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Relationship breakdown or separation,item,
+informant,t_fin,Trend (personnel): Money and debt distress,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Money and debt distress,item,
+informant,t_shy,Trend (personnel): Borrowing from informal lenders (shylocks),ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Borrowing from informal lenders (shylocks),item,
+informant,t_pledge,"Trend (personnel): Leaving ID cards, bank cards or phones with lenders as security",ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,"Leaving ID cards, bank cards or phones with lenders as security",item,
+informant,t_lostcard,Trend (personnel): ID or bank cards reported lost while actually held by a lender,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,ID or bank cards reported lost while actually held by a lender,item,
+informant,t_harass,Trend (personnel): Harassment or threats by lenders (including calls to relatives and colleagues),ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Harassment or threats by lenders (including calls to relatives and colleagues),item,
+informant,t_deduct,Trend (personnel): Salary deductions leaving little take-home pay,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Salary deductions leaving little take-home pay,item,
+informant,t_trans,Trend (personnel): Problems around discharge or retirement,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Problems around discharge or retirement,item,
+informant,t_f_distress,"Trend (families): Distress, depression or anxiety among spouses or partners",ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,"Distress, depression or anxiety among spouses or partners",item,
+informant,t_f_fv,"Trend (families): Spouses, partners or children reported as victims of violence at home",ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,"Spouses, partners or children reported as victims of violence at home",item,
+informant,t_f_child,Trend (families): Emotional or behavioural problems in children,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Emotional or behavioural problems in children,item,
+informant,t_f_isol,Trend (families): Isolation of families during deployments or postings,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Isolation of families during deployments or postings,item,
+informant,t_f_debt,Trend (families): Families in debt to informal lenders,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Families in debt to informal lenders,item,
+informant,t_f_bereave,Trend (families): Unmet psychosocial needs of bereaved families,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,Unmet psychosocial needs of bereaved families,item,
+informant,d_share,Estimated share with informal loans,ordinal,1=Almost none; 2=Under a quarter; 3=A quarter to a half; 4=More than half; 9=Do not know,"In your estimate, what share of personnel you know of have an informal (non-bank, non-SACCO) loan at any time in a year?",item,
+informant,d_lost,Share of lost cards actually held by lender,ordinal,1=Almost none; 2=A few; 3=About half; 4=Most; 9=Do not know,"Of ID or bank cards reported lost, how many do you think were actually held by a lender?",item,"sensitive item, can be switched off in web/config.js"
+informant,d_know,How well the problem is known,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,How well does the unit or Medical Services know about this problem today?,item,
+informant,d_why_emerg,Reason for borrowing: Emergencies and medical bills,nominal,1=Ticked; 0=Not ticked,Emergencies and medical bills [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_fees,Reason for borrowing: School fees,nominal,1=Ticked; 0=Not ticked,School fees [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_delay,Reason for borrowing: Delays in pay or allowances,nominal,1=Ticked; 0=Not ticked,Delays in pay or allowances [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_repay,Reason for borrowing: Repaying other loans or deductions,nominal,1=Ticked; 0=Not ticked,Repaying other loans or deductions [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_life,Reason for borrowing: Lifestyle and social pressure,nominal,1=Ticked; 0=Not ticked,Lifestyle and social pressure [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_bet,Reason for borrowing: Betting or gambling,nominal,1=Ticked; 0=Not ticked,Betting or gambling [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_biz,Reason for borrowing: Business or side income,nominal,1=Ticked; 0=Not ticked,Business or side income [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_family,Reason for borrowing: Family and extended-family obligations,nominal,1=Ticked; 0=Not ticked,Family and extended-family obligations [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_alc,Reason for borrowing: Alcohol,nominal,1=Ticked; 0=Not ticked,Alcohol [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_why_other,Reason for borrowing: Other,nominal,1=Ticked; 0=Not ticked,Other [Main reasons personnel borrow from informal lenders (tick up to 3)],item,
+informant,d_text,What would make personnel come forward,nominal,"(free text, see v_free_text)",What would make personnel come forward about a loan or a held card? (No names or details that could identify a person.),text,not in the flat view
+informant,em_new,New pattern noticed,nominal,1=Yes; 0=No; 2=Not sure,"Have you seen a new or unusual pattern of mental health problems, money problems or violence at home in the last 2 years?",item,
+informant,em_text,Describe new pattern,nominal,"(free text, see v_free_text)","If yes, briefly describe it. Do not include names, service numbers or anything that could identify a person.",text,asked only if em_new in [1]; not in the flat view
+informant,em_early,Share who seek help early,ordinal,1=Almost none; 2=A few; 3=About half; 4=Most; 9=Do not know,What share of personnel with a problem do you think seek help early?,item,
+informant,ds_know,Knows DCHS students well enough,nominal,"1=Yes; 0=No, skip this part",Do you know enough about DCHS students to answer the next questions?,item,
+informant,ds_trend,Trend: students leaving or deferring,ordinal,1=Decreased a lot; 2=Decreased a little; 3=About the same; 4=Increased a little; 5=Increased a lot; 9=Do not know,"Over the last 2 years, has the number of DCHS students leaving or deferring for health or personal reasons changed?",item,asked only if ds_know in [1]
+informant,ds_why_mh,"Reason students leave: Stress, low mood or anxiety",nominal,1=Ticked; 0=Not ticked,"Stress, low mood or anxiety [Main reasons students leave or defer (tick up to 3)]",item,asked only if ds_know in [1]
+informant,ds_why_fees,Reason students leave: Fees or money problems,nominal,1=Ticked; 0=Not ticked,Fees or money problems [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_why_debt,Reason students leave: Debt or informal loans,nominal,1=Ticked; 0=Not ticked,Debt or informal loans [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_why_family,Reason students leave: Family or home problems,nominal,1=Ticked; 0=Not ticked,Family or home problems [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_why_acad,Reason students leave: Academic difficulty,nominal,1=Ticked; 0=Not ticked,Academic difficulty [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_why_disc,Reason students leave: Discipline or the demands of military life,nominal,1=Ticked; 0=Not ticked,Discipline or the demands of military life [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_why_phys,Reason students leave: Physical illness,nominal,1=Ticked; 0=Not ticked,Physical illness [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_why_mind,Reason students leave: Changed plans or career choice,nominal,1=Ticked; 0=Not ticked,Changed plans or career choice [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_why_alc,Reason students leave: Alcohol or drugs,nominal,1=Ticked; 0=Not ticked,Alcohol or drugs [Main reasons students leave or defer (tick up to 3)],item,asked only if ds_know in [1]
+informant,ds_adeq,Adequacy of current student support,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,"How good is the support now available to DCHS students for stress, mood, money and family problems?",item,asked only if ds_know in [1]
+informant,ds_early,When struggling students are first noticed,ordinal,1=Before their studies suffer; 2=When their grades fall; 3=When they stop attending; 4=Only when they leave or defer; 9=Do not know,When are students in difficulty usually first noticed?,item,asked only if ds_know in [1]
+informant,ds_gate,Agree: check not used for admission,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,An online wellbeing check should NOT be used to decide who is admitted.,item,asked only if ds_know in [1]
+informant,ds_useful,Agree: voluntary support-only check useful,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,A voluntary online wellbeing check for applicants and students would be useful.,item,asked only if ds_know in [1]
+informant,ds_share,Agree: student may share colour with support office,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"A student should be able to choose to share a colour (green, amber or red) with the student-support office.",item,asked only if ds_know in [1]
+informant,ds_interv,Agree: interviewer may see colour,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,An interviewer on the selection panel should be able to see an applicant's colour.,item,asked only if ds_know in [1]
+informant,ds_when,Best time for an online check,nominal,"1=At application, before the interview; 2=After the admission offer; 3=At orientation; 4=Each term; 5=Before exams or clinical placements",When would an online check help most?,item,asked only if ds_know in [1]
+informant,ds_text,What would make students trust the check,nominal,"(free text, see v_free_text)",What would make students trust and use an online wellbeing check? (Do not include names or details that could identify anyone.),text,asked only if ds_know in [1]; not in the flat view
+informant,b_stigma,Barrier: Stigma and fear of being seen as weak,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Stigma and fear of being seen as weak,item,
+informant,b_cmdr,Barrier: Fear that commanders will find out or react badly,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Fear that commanders will find out or react badly,item,
+informant,b_records,Barrier: Doubts about confidentiality of records,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Doubts about confidentiality of records,item,
+informant,b_staff,Barrier: Too few trained mental health staff,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Too few trained mental health staff,item,
+informant,b_dist,Barrier: Distance from services during postings,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Distance from services during postings,item,
+informant,b_tempo,Barrier: Operational tempo and no protected time,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Operational tempo and no protected time,item,
+informant,b_family,Barrier: Little help available for families,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Little help available for families,item,
+informant,b_aware,Barrier: Low awareness of what is available,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Low awareness of what is available,item,
+informant,b_alc,Barrier: Alcohol used to cope or cover problems,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Alcohol used to cope or cover problems,item,
+informant,b_discipline,"Barrier: Fear of discipline over a pledged, held or 'lost' ID card",ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,"Fear of discipline over a pledged, held or 'lost' ID card",item,
+informant,b_credit,"Barrier: Few safe credit, savings and financial counselling options",ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,"Few safe credit, savings and financial counselling options",item,
+informant,a_screen,Current adequacy: Screening before and after deployment,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Screening before and after deployment,item,
+informant,a_counsel,Current adequacy: Access to counselling,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Access to counselling,item,
+informant,a_crisis,Current adequacy: Response to a person at risk of suicide,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Response to a person at risk of suicide,item,
+informant,a_family,Current adequacy: Support for families,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Support for families,item,
+informant,a_gbv,Current adequacy: Response to violence at home,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Response to violence at home,item,
+informant,a_civ,Current adequacy: Links to civilian services and hospitals,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Links to civilian services and hospitals,item,
+informant,a_fin,Current adequacy: Financial counselling and safe credit,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Financial counselling and safe credit,item,
+informant,a_idcard,Current adequacy: Procedure when an ID card is lost or held by a lender,ordinal,1=Very poor; 2=Poor; 3=Fair; 4=Good; 5=Very good; 9=Do not know,Procedure when an ID card is lost or held by a lender,item,
+informant,f1,Feature priority: Private check-in with a result the person can use,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Private check-in with a result the person can use,item,
+informant,f2,Feature priority: Nurse call-back within a set time,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Nurse call-back within a set time,item,
+informant,f3,Feature priority: Anonymous 'ask the nurse' box,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Anonymous 'ask the nurse' box,item,
+informant,f4,"Feature priority: Welfare navigator for money, housing and family problems",ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,"Welfare navigator for money, housing and family problems",item,
+informant,f5,Feature priority: Pre- and post-deployment check-ins,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Pre- and post-deployment check-ins,item,
+informant,f6,Feature priority: Buddy-check reminders and peer champions,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Buddy-check reminders and peer champions,item,
+informant,f7,Feature priority: A version for spouses and family members,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,A version for spouses and family members,item,
+informant,f8,Feature priority: Anonymous unit-level reports,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Anonymous unit-level reports,item,
+informant,f9,Feature priority: Sleep and stress micro-lessons,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Sleep and stress micro-lessons,item,
+informant,f10,Feature priority: Debt help: one-page debt plan and route to the welfare officer or SACCO,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,Debt help: one-page debt plan and route to the welfare officer or SACCO,item,
+informant,f11,Feature priority: A written no-penalty route for personnel who come forward about a held ID card,ordinal,1=Not important; 2=Slightly important; 3=Moderately important; 4=Very important; 5=Essential,A written no-penalty route for personnel who come forward about a held ID card,item,
+informant,g_time,Acceptable time to contact (high risk),ordinal,1=Within 1 hour; 2=Within 4 hours; 3=Within 8 hours; 4=Within 24 hours; 5=Within 3 days,"For a person at high risk, what is the longest acceptable time before a nurse or clinician makes first contact?",item,
+informant,g_notify,Commanders see group figures only,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Commanders should receive anonymous group figures only (no individual information).,item,
+informant,g_mand,Voluntary vs required,ordinal,"1=Voluntary only; 2=Voluntary but encouraged with protected time; 3=Required, with private results",Check-ins should be:,item,
+informant,g_family,Family access agreed,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Spouses and family members should be able to use the service.,item,
+informant,g_safe,Agree no-penalty route for held ID cards,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"During the pilot, personnel who come forward on their own about a held ID card should be offered a written no-penalty route to recover it.",item,"sensitive item, can be switched off in web/config.js"
+informant,g_host,Data hosting preference,nominal,"1=On a free cloud service, anonymous data only; 2=On a hospital or Ministry server only; 3=Not sure",Where should the pilot data be kept?,item,
+informant,ad_support,Support pilot,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would support a 3-month pilot in one or two units.,item,
+informant,ad_nurse,Nurse on call possible,nominal,"1=Yes; 2=Maybe, with support; 0=No",Can a nurse be made available to answer call-backs within the agreed time?,item,
+informant,ad_approve,Approvals needed,nominal,"(free text, see v_free_text)",Who must approve before the pilot can start?,text,not in the flat view
+informant,ad_top3,Top three changes,nominal,"(free text, see v_free_text)",What are the top three changes that would most improve mental health care for personnel and families?,text,not in the flat view
+informant,ad_stop,Reasons to stop supporting,nominal,"(free text, see v_free_text)",What would make you stop supporting a service like this?,text,not in the flat view
+usability_end,response_id,Response ID,nominal,,,meta,
+usability_end,submitted_at,Date and time submitted,scale,,,meta,
+usability_end,grp,Respondent group,nominal,,,meta,
+usability_end,wave,Wave,nominal,,,meta,
+usability_end,context,Check-in context,nominal,,,meta,
+usability_end,unit_code,Unit group code,nominal,,,meta,
+usability_end,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+usability_end,protocol_version,Protocol version live when collected,nominal,,,meta,
+usability_end,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+usability_end,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+usability_end,u_role,Role in pilot,nominal,"1=Serving member; 2=Family member; 3=Nurse or clinician; 4=Chaplain, welfare officer or peer champion; 5=Other",Who are you?,item,
+usability_end,u_weeks,Weeks of use,ordinal,1=Under 2; 2=2 to 4; 3=5 to 8; 4=9 or more,About how many weeks did you use the app?,item,
+usability_end,sus1,SUS item 1,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I think that I would like to use this app frequently.,item,
+usability_end,sus2,SUS item 2,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I found the app unnecessarily complex.,item,
+usability_end,sus3,SUS item 3,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I thought the app was easy to use.,item,
+usability_end,sus4,SUS item 4,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I think that I would need the support of a technical person to be able to use this app.,item,
+usability_end,sus5,SUS item 5,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I found the various functions in this app were well integrated.,item,
+usability_end,sus6,SUS item 6,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I thought there was too much inconsistency in this app.,item,
+usability_end,sus7,SUS item 7,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would imagine that most people would learn to use this app very quickly.,item,
+usability_end,sus8,SUS item 8,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I found the app very cumbersome to use.,item,
+usability_end,sus9,SUS item 9,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I felt very confident using the app.,item,
+usability_end,sus10,SUS item 10,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I needed to learn a lot of things before I could get going with this app.,item,
+usability_end,pe1,Acceptability: Using the app helps me get help sooner.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Using the app helps me get help sooner.,item,
+usability_end,pe2,Acceptability: Using the app helps me find the right kind of help.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Using the app helps me find the right kind of help.,item,
+usability_end,ee1,Acceptability: Learning to use the app was easy for me.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Learning to use the app was easy for me.,item,
+usability_end,si1,"Acceptability: People who matter to me (buddy, chaplain, commander) support my use of the app.",ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"People who matter to me (buddy, chaplain, commander) support my use of the app.",item,
+usability_end,si2,Acceptability: Other people in my unit use or recommend the app.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Other people in my unit use or recommend the app.,item,
+usability_end,fc1,"Acceptability: I had what I needed (phone, data and time) to use the app.",ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"I had what I needed (phone, data and time) to use the app.",item,
+usability_end,fc2,Acceptability: I could reach a nurse when I needed to.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I could reach a nurse when I needed to.,item,
+usability_end,bi1,Acceptability: I intend to keep using the app.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I intend to keep using the app.,item,
+usability_end,bi2,Acceptability: I would recommend the app to a colleague or family member.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would recommend the app to a colleague or family member.,item,
+usability_end,pc1,Confidentiality: I believe my commander cannot see my answers.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I believe my commander cannot see my answers.,item,
+usability_end,pc2,Confidentiality: I felt safe answering honestly.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I felt safe answering honestly.,item,
+usability_end,pc3,Confidentiality: I worried that my answers could be traced back to me.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I worried that my answers could be traced back to me.,item,
+usability_end,pc4,Confidentiality: I trust that only the nurse can see what I choose to share.,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I trust that only the nurse can see what I choose to share.,item,
+usability_end,u_lesson,"Feature use: Micro-lessons (sleep, stress, money)",ordinal,"1=Used and helpful; 2=Used, not helpful; 0=Did not use","Micro-lessons (sleep, stress, money)",item,
+usability_end,u_ask,Feature use: Ask the nurse,ordinal,"1=Used and helpful; 2=Used, not helpful; 0=Did not use",Ask the nurse,item,
+usability_end,u_welfare,Feature use: Welfare navigator and debt help,ordinal,"1=Used and helpful; 2=Used, not helpful; 0=Did not use",Welfare navigator and debt help,item,
+usability_end,u_buddy,Feature use: Buddy check reminders,ordinal,"1=Used and helpful; 2=Used, not helpful; 0=Did not use",Buddy check reminders,item,
+usability_end,u_callback,Feature use: Nurse call-back,ordinal,"1=Used and helpful; 2=Used, not helpful; 0=Did not use",Nurse call-back,item,
+usability_end,u_deploy,Feature use: Pre- or post-deployment check-in,ordinal,"1=Used and helpful; 2=Used, not helpful; 0=Did not use",Pre- or post-deployment check-in,item,
+usability_end,hsi_nurse,Intention: nurse,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a nurse?,item,
+usability_end,hsi_chaplain,Intention: chaplain,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a chaplain?,item,
+usability_end,hsi_welfare,Intention: welfare officer,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a welfare officer?,item,
+usability_end,hsi_buddy,Intention: buddy,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a buddy or friend in the unit?,item,
+usability_end,hsi_cmdr,Intention: commander,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to your commander?,item,
+usability_end,hsi_app,Intention: phone service,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to use a private phone service?,item,
+usability_end,hsi_none,Intention: nobody,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to nobody at all?,item,
+usability_end,st1,Stigma: look weak,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,Seeking help would make me look weak.,item,
+usability_end,st2,Stigma: commander treats differently,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My commander would treat me differently if I sought help.,item,
+usability_end,st3,Stigma: records not confidential,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My records would not stay confidential.,item,
+usability_end,co1,Confidentiality fear: result reaches commander,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I worry that a screening result could reach my commander.,item,
+usability_end,co5,Fear of discipline if money problem admitted,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I would be afraid to admit a money problem (such as a loan or a held ID card) because of discipline.,item,
+usability_end,nps,Likelihood to recommend (0-10),scale,0=0; 1=1; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9; 10=10,"How likely are you to recommend this app to a colleague? (0 = not at all, 10 = extremely)",item,
+usability_end,u_text,One change,nominal,"(free text, see v_free_text)",What one change would make the app better? (Do not include names or details that could identify anyone.),text,not in the flat view
+usability_end,sus,SUS score (0-100),scale,,,derived,calculated in the database view
+student_screen,response_id,Response ID,nominal,,,meta,
+student_screen,submitted_at,Date and time submitted,scale,,,meta,
+student_screen,grp,Respondent group,nominal,,,meta,
+student_screen,wave,Wave,nominal,,,meta,
+student_screen,context,Check-in context,nominal,,,meta,
+student_screen,unit_code,Unit group code,nominal,,,meta,
+student_screen,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+student_screen,protocol_version,Protocol version live when collected,nominal,,,meta,
+student_screen,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+student_screen,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+student_screen,age,Age group,ordinal,1=18 to 19; 2=20 to 24; 3=25 to 34; 4=35 or older,Age group,item,
+student_screen,sex,Sex,nominal,1=Male; 2=Female; 3=Prefer not to say,Sex,item,
+student_screen,prog,Programme,nominal,1=BSc Nursing with Military Health; 2=Another DCHS programme; 3=Not sure yet,Which DCHS programme are you in (or applying for)?,item,
+student_screen,yos,Year of study,ordinal,1=Year 1; 2=Year 2; 3=Year 3; 4=Year 4 or later; 5=I am an applicant and have not started,Which year of study are you in?,item,
+student_screen,apptype,Entry route,nominal,1=From school; 2=From civilian work or earlier study; 3=As a serving member of the forces; 4=As a former member of the forces,How did you come to the programme?,item,
+student_screen,firstaway,First time living away from home,nominal,1=Yes; 0=No,Is this the first time you have lived away from your family home for months at a time?,item,
+student_screen,prior_care,Previous counselling or treatment,nominal,1=Yes; 0=No; 9=Prefer not to say,"Have you ever had counselling or treatment for your emotional or mental health? (This is for the study only. It is never shared with the college, your lecturers or any discipline office.)",item,"sensitive item, can be switched off in web/config.js"
+student_screen,fam_loss,Recent bereavement or serious illness in family,nominal,1=Yes; 0=No; 9=Prefer not to say,"In the last 12 months, has someone close to you died or been seriously ill?",item,
+student_screen,phq_1,PHQ-9 item 1,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Little interest or pleasure in doing things,item,
+student_screen,phq_2,PHQ-9 item 2,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling down, depressed or hopeless",item,
+student_screen,phq_3,PHQ-9 item 3,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Trouble falling or staying asleep, or sleeping too much",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+student_screen,phq_4,PHQ-9 item 4,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Feeling tired or having little energy,item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+student_screen,phq_5,PHQ-9 item 5,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Poor appetite or overeating,item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+student_screen,phq_6,PHQ-9 item 6,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling bad about yourself, or that you are a failure or have let yourself or your family down",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+student_screen,phq_7,PHQ-9 item 7,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Trouble concentrating on things, such as reading or watching television",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+student_screen,phq_8,PHQ-9 item 8,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Moving or speaking so slowly that other people could have noticed, or being so fidgety or restless that you have been moving around a lot more than usual",item,adaptive: asked only if phq_1+phq_2 add to 2 or more
+student_screen,phq_9,PHQ-9 item 9,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Thoughts that you would be better off dead, or of hurting yourself in some way",item,
+student_screen,gad_1,GAD-7 item 1,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling nervous, anxious or on edge",item,
+student_screen,gad_2,GAD-7 item 2,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Not being able to stop or control worrying,item,
+student_screen,gad_3,GAD-7 item 3,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Worrying too much about different things,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+student_screen,gad_4,GAD-7 item 4,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Trouble relaxing,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+student_screen,gad_5,GAD-7 item 5,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Being so restless that it is hard to sit still,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+student_screen,gad_6,GAD-7 item 6,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,Becoming easily annoyed or irritable,item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+student_screen,gad_7,GAD-7 item 7,ordinal,0=Not at all; 1=Several days; 2=More than half the days; 3=Nearly every day,"Feeling afraid, as if something awful might happen",item,adaptive: asked only if gad_1+gad_2 add to 2 or more
+student_screen,ptsd_gate,PC-PTSD-5 exposure,nominal,1=Yes; 0=No,"Sometimes things happen to people that are unusually or especially frightening, horrible or traumatic. For example: a serious accident or fire; a physical or sexual assault or abuse; a disaster; a war or attack; seeing someone be killed or seriously injured; or having a loved one die through homicide or suicide. Have you ever experienced this kind of event?",item,
+student_screen,ptsd_1,PC-PTSD-5 item 1,nominal,1=Yes; 0=No,Had nightmares about the event(s) or thought about the event(s) when you did not want to?,item,asked only if ptsd_gate in [1]
+student_screen,ptsd_2,PC-PTSD-5 item 2,nominal,1=Yes; 0=No,Tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?,item,asked only if ptsd_gate in [1]
+student_screen,ptsd_3,PC-PTSD-5 item 3,nominal,1=Yes; 0=No,"Been constantly on guard, watchful or easily startled?",item,asked only if ptsd_gate in [1]
+student_screen,ptsd_4,PC-PTSD-5 item 4,nominal,1=Yes; 0=No,"Felt numb or detached from other people, activities or your surroundings?",item,asked only if ptsd_gate in [1]
+student_screen,ptsd_5,PC-PTSD-5 item 5,nominal,1=Yes; 0=No,Felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?,item,asked only if ptsd_gate in [1]
+student_screen,ac1,AUDIT-C item 1,ordinal,0=Never; 1=Monthly or less; 2=2 to 4 times a month; 3=2 to 3 times a week; 4=4 or more times a week,How often do you have a drink containing alcohol?,item,
+student_screen,ac2,AUDIT-C item 2,ordinal,0=1 or 2; 1=3 or 4; 2=5 or 6; 3=7 to 9; 4=10 or more,"How many drinks do you have on a typical day when you are drinking? (One drink is about one 330 ml bottle of beer, one small glass of wine or one tot of spirits.)",item,"asked only if ac1 in [1, 2, 3, 4]"
+student_screen,ac3,AUDIT-C item 3,ordinal,0=Never; 1=Less than monthly; 2=Monthly; 3=Weekly; 4=Daily or almost daily,How often do you have six or more drinks on one occasion?,item,"asked only if ac1 in [1, 2, 3, 4]"
+student_screen,la1,"Pressure: Money: fees, upkeep or debt",ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,"Money: fees, upkeep or debt",item,
+student_screen,la2,Pressure: Being far from family or home,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Being far from family or home,item,
+student_screen,la3,Pressure: Conflict or problems at home,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Conflict or problems at home,item,
+student_screen,la4,Pressure: Accommodation or housing,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Accommodation or housing,item,
+student_screen,la5,Pressure: Pressure to succeed or fear of failing,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Pressure to succeed or fear of failing,item,
+student_screen,la6,Pressure: Your health,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Your health,item,
+student_screen,la7,Pressure: Loneliness or fitting in,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Loneliness or fitting in,item,
+student_screen,la8,Pressure: Bereavement or loss,ordinal,0=Not a problem; 1=A bit of a problem; 2=A big problem,Bereavement or loss,item,
+student_screen,fm_needs,Ran out of money for basic needs,ordinal,0=Never; 1=Once or twice; 2=Several times; 3=Most of the month,"Over the last month, how often did you run out of money for basic needs (food, rent, fees, transport) before the next money came in?",item,
+student_screen,fm_share,Share of pay on repayments and deductions,nominal,0=None; 1=Less than a quarter; 2=A quarter to a half; 3=More than half; 9=Prefer not to say,About what share of your money or allowance each month goes on repaying loans?,item,
+student_screen,fm_borrow,Borrowed from informal lender in last 3 months,nominal,"0=No; 1=Yes, once or twice; 2=Yes, several times; 9=Prefer not to say","In the last 3 months, did you borrow money from a lender who is not a bank, SACCO or welfare scheme? For example, a daily, weekly or monthly lender ('shylock') who calls or messages you for repayment.",item,"sensitive item, can be switched off in web/config.js"
+student_screen,fm_cost,Repayment much higher than borrowed,nominal,1=Yes; 0=No; 2=Not sure,Did you have to repay much more than you borrowed (for example 30% or more extra within a month)?,item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,sec_atm,Security held: ATM or bank card,nominal,1=Ticked; 0=Not ticked,A bank or ATM card [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,sec_phone,Security held: phone,nominal,1=Ticked; 0=Not ticked,A phone [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,sec_id,Security held: military ID card,nominal,1=Ticked; 0=Not ticked,"An ID card (national, student or military) [Did a lender keep anything as security? (tick all that apply)]",item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,sec_doc,Security held: other documents,nominal,1=Ticked; 0=Not ticked,Other documents (for example a title deed or logbook) [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,sec_item,Security held: other belongings,nominal,1=Ticked; 0=Not ticked,Other belongings [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,sec_none,Security held: nothing,nominal,1=Ticked; 0=Not ticked,Nothing [Did a lender keep anything as security? (tick all that apply)],item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,fm_lost,Reported ID/card lost while held by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Have you reported a card or ID as lost, or asked for a replacement, when it was actually being held by a lender?",item,"asked only if sec_id in [1]; sensitive item, can be switched off in web/config.js"
+student_screen,fm_threat,Threatened or harassed by lender,nominal,1=Yes; 0=No; 9=Prefer not to say,"Has a lender or someone you owe threatened, shamed or harassed you or your family (calls, messages to your contacts, visits)?",item,"asked only if fm_borrow in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,fm_effect,"Effect of money worries on sleep, mood, home",ordinal,0=Not at all; 1=A little; 2=A lot; 3=Extremely,"How much have money worries affected your sleep, mood or home life this month?",item,
+student_screen,fm_know,Knows where to get money help,ordinal,1=Yes; 2=A little; 3=No,"Do you know where to get safe, confidential money help (college welfare, your sponsor, a SACCO or a financial counsellor)?",item,
+student_screen,bt1,"Betting frequency, last 3 months",ordinal,0=Never; 1=Monthly or less; 2=Weekly; 3=Most days; 9=Prefer not to say,"In the last 3 months, how often have you bet money (sports betting, casino, lottery or betting apps)?",item,"sensitive item, can be switched off in web/config.js"
+student_screen,bt2,Lie/Bet: need to bet more,nominal,1=Yes; 0=No; 9=Prefer not to say,Have you ever felt the need to bet more and more money?,item,"asked only if bt1 in [1, 2, 3]; sensitive item, can be switched off in web/config.js"
+student_screen,bt3,Lie/Bet: lied about betting,nominal,1=Yes; 0=No; 9=Prefer not to say,Have you ever had to lie to people important to you about how much you bet?,item,"asked only if bt1 in [1, 2, 3]; sensitive item, can be switched off in web/config.js"
+student_screen,bt4,Betting led to borrowing,nominal,1=Yes; 0=No; 9=Prefer not to say,"Has betting led you to borrow money, including from an informal lender?",item,"asked only if bt1 in [1, 2, 3]; sensitive item, can be switched off in web/config.js"
+student_screen,po1,"Altercation with civilian police, last 12 months",ordinal,"0=No; 1=Yes, once; 2=Yes, more than once; 9=Prefer not to say","In the last 12 months, have you had an argument, confrontation or physical altercation with a civilian police officer (for example at a roadblock, on patrol, in a bar or in a dispute with a civilian)?",item,"sensitive item, can be switched off in web/config.js"
+student_screen,po2,Setting of police altercation,nominal,"1=Traffic or a roadblock; 2=A bar, club or social place; 3=A dispute with a civilian (money, neighbour, relationship); 4=A debt or loan matter; 5=While off duty or on leave; 6=Something else; 9=Prefer not to say",What was the main setting?,item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,po3,Alcohol involved in police altercation,nominal,1=Yes; 0=No; 9=Prefer not to say,Was alcohol involved?,item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,po4,Outcome of police altercation,nominal,1=Sorted out on the spot; 2=Detained for a short time; 3=Charged or taken to court; 4=Reported to my unit or college; 9=Prefer not to say,What happened afterwards?,item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,po5,Got help after police altercation,nominal,1=Yes; 0=No; 2=I did not know who to ask; 9=Prefer not to say,"Did you get help afterwards (welfare, legal officer, a senior or a friend)?",item,"asked only if po1 in [1, 2]; sensitive item, can be switched off in web/config.js"
+student_screen,po6,Feels fairly treated by civilian police,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"When I am off duty, I feel civilian police treat me fairly.",item,
+student_screen,po7,Worry small police incident becomes discipline case,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I worry that a small incident with civilian police could become a discipline or legal case that harms my career.,item,
+student_screen,po8,Knows who to contact if held by police,ordinal,1=Yes; 2=A little; 3=No,"Do you know who to contact (legal officer, welfare officer or military police liaison) if you are held by civilian police?",item,
+student_screen,sr_fees,"Stressor ticked: Fees, upkeep or money",nominal,1=Ticked; 0=Not ticked,"Fees, upkeep or money [What are the biggest things weighing on you now? (tick up to 3)]",item,
+student_screen,sr_lender,Stressor ticked: Pressure from a lender or someone I owe,nominal,1=Ticked; 0=Not ticked,Pressure from a lender or someone I owe [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_exams,"Stressor ticked: Exams, grades or fear of failing",nominal,1=Ticked; 0=Not ticked,"Exams, grades or fear of failing [What are the biggest things weighing on you now? (tick up to 3)]",item,
+student_screen,sr_away,Stressor ticked: Being far from family or home,nominal,1=Ticked; 0=Not ticked,Being far from family or home [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_homefight,Stressor ticked: Conflict or tension at home,nominal,1=Ticked; 0=Not ticked,Conflict or tension at home [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_health,Stressor ticked: My health or illness,nominal,1=Ticked; 0=Not ticked,My health or illness [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_future,Stressor ticked: Worry about the future or about my progress on the course,nominal,1=Ticked; 0=Not ticked,Worry about the future or about my progress on the course [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_loss,Stressor ticked: A loss or bereavement,nominal,1=Ticked; 0=Not ticked,A loss or bereavement [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_online,Stressor ticked: Things I see online or in the news,nominal,1=Ticked; 0=Not ticked,Things I see online or in the news [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_lonely,Stressor ticked: Loneliness or fitting in,nominal,1=Ticked; 0=Not ticked,Loneliness or fitting in [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_alcohol,Stressor ticked: Alcohol or drugs,nominal,1=Ticked; 0=Not ticked,Alcohol or drugs [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_safety,Stressor ticked: Fear for my safety,nominal,1=Ticked; 0=Not ticked,Fear for my safety [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_other,Stressor ticked: Something else,nominal,1=Ticked; 0=Not ticked,Something else [What are the biggest things weighing on you now? (tick up to 3)],item,
+student_screen,sr_text,Stressor in own words,nominal,"(free text, see v_free_text)","In your own words, what is weighing on you most right now? Please do not write names, lender details, service numbers or places.",text,not in the flat view
+student_screen,cl1,Thought of leaving or deferring,ordinal,0=Never; 1=Once or twice; 2=Sometimes; 3=Often,"In the last 3 months, have you thought about leaving or deferring your programme?",item,
+student_screen,cl_workload,Reason for thinking of leaving: Workload or exams,nominal,1=Ticked; 0=Not ticked,Workload or exams [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_money,Reason for thinking of leaving: Money or fees,nominal,1=Ticked; 0=Not ticked,Money or fees [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_health,Reason for thinking of leaving: My health or wellbeing,nominal,1=Ticked; 0=Not ticked,My health or wellbeing [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_family,Reason for thinking of leaving: Problems in my family,nominal,1=Ticked; 0=Not ticked,Problems in my family [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_discipline,Reason for thinking of leaving: Military discipline or routine,nominal,1=Ticked; 0=Not ticked,Military discipline or routine [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_away,Reason for thinking of leaving: Time away from home,nominal,1=Ticked; 0=Not ticked,Time away from home [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_clinical,Reason for thinking of leaving: What I experienced on clinical placement,nominal,1=Ticked; 0=Not ticked,What I experienced on clinical placement [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_treat,Reason for thinking of leaving: The way I am treated by others,nominal,1=Ticked; 0=Not ticked,The way I am treated by others [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]; sensitive item, can be switched off in web/config.js"
+student_screen,cl_wrong,Reason for thinking of leaving: I think I chose the wrong course,nominal,1=Ticked; 0=Not ticked,I think I chose the wrong course [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,cl_other,Reason for thinking of leaving: Something else,nominal,1=Ticked; 0=Not ticked,Something else [What made you think about it? (tick up to 3)],item,"asked only if cl1 in [1, 2, 3]"
+student_screen,brs1,Resilience item 1,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I tend to bounce back quickly after hard times.,item,
+student_screen,brs2,Resilience item 2,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I have a hard time making it through stressful events.,item,
+student_screen,brs3,Resilience item 3,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,It does not take me long to recover from a stressful event.,item,
+student_screen,brs4,Resilience item 4,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,It is hard for me to snap back when something bad happens.,item,
+student_screen,brs5,Resilience item 5,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I usually come through difficult times with little trouble.,item,
+student_screen,brs6,Resilience item 6,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I tend to take a long time to get over setbacks in my life.,item,
+student_screen,rd_talk,Has someone to talk to,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I have at least one person I can talk to openly when I have a problem.,item,
+student_screen,rd_family,Family support for the programme,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,My family supports my being on this programme.,item,
+student_screen,rd_know,Demands as expected,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"The demands of the programme (workload, discipline, clinical placements and time away) are what I expected.",item,
+student_screen,rd_conf,Confident of completing programme,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I am confident I can complete the programme.,item,
+student_screen,rd_help,Would ask for help early,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"If I were struggling at the college, I would ask for help early.",item,
+student_screen,hsi_nurse,Intention: nurse,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a nurse?,item,
+student_screen,hsi_chaplain,Intention: chaplain,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a chaplain or counsellor?,item,
+student_screen,hsi_welfare,Intention: welfare officer,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a welfare officer?,item,
+student_screen,hsi_buddy,Intention: buddy,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to a friend or classmate?,item,
+student_screen,hsi_cmdr,Intention: commander,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,"How likely would you be to talk to a lecturer, course leader or commander?",item,
+student_screen,hsi_app,Intention: phone service,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to use a private phone service?,item,
+student_screen,hsi_none,Intention: nobody,ordinal,1=Very unlikely; 2=Unlikely; 3=Unsure; 4=Likely; 5=Very likely,How likely would you be to talk to nobody at all?,item,
+student_screen,h1,Home tension trend,nominal,1=Much better; 2=A little better; 3=About the same; 4=A little worse; 5=Much worse; 9=Prefer not to say,"Over the last 12 months, have arguments or tension at home become better or worse?",item,
+student_screen,h2,Hurt or frightened at home,nominal,1=Yes; 0=No; 9=Prefer not to say,"In the last 12 months, has anyone at home hurt, threatened or frightened you?",item,
+student_screen,h3,Worry own anger or drinking harms home,nominal,1=Yes; 0=No; 9=Prefer not to say,Have you worried that your own anger or drinking has hurt or frightened someone at home?,item,
+student_screen,sug1,Suggestion: service,nominal,"(free text, see v_free_text)",What would make this service more useful to you? (You may leave this blank.),text,not in the flat view
+student_screen,sug2,Suggestion: college or study,nominal,"(free text, see v_free_text)","Is there anything about the college, or about this study, that you would like to suggest or change? (You may leave this blank.)",text,not in the flat view
+student_screen,sug3,Suggestion: questions,nominal,"(free text, see v_free_text)","Is there a question we should have asked, or one that was hard to understand? (You may leave this blank.)",text,not in the flat view
+student_screen,av1,Worried answers affect place or progress,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"While answering, I worried my answers might affect my place or progress on the course.",item,
+student_screen,av2,Felt should look well,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"While answering, I felt I should answer so that I look well.",item,
+student_screen,av3,Answered honestly,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,I answered these questions honestly.,item,
+student_screen,av4,Believes college staff cannot see answers,ordinal,1=Strongly disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree,"I believe the college staff who teach, mark or discipline me cannot see my individual answers.",item,
+student_screen,phq9,PHQ-9 total (0-27),scale,,,derived,calculated in the database view
+student_screen,gad7,GAD-7 total (0-21),scale,,,derived,calculated in the database view
+student_screen,ptsd5,PC-PTSD-5 total (0-5),scale,,,derived,calculated in the database view
+student_screen,auditc,AUDIT-C total (0-12),scale,,,derived,calculated in the database view
+student_screen,lifestress_a,Student life pressure total (0-16),scale,,,derived,calculated in the database view
+student_screen,brs,Brief Resilience Scale sum (6-30; divide by 6 for the usual 1-5 mean),scale,,,derived,calculated in the database view
+student_screen,stakes,Perceived consequences: worry that answers affect place or progress plus pressure to look well (2-10),scale,,,derived,calculated in the database view
+student_screen,phq9_short,"PHQ-9 answered as adaptive short form (1 = items 3 to 8 not asked, scored 0)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,gad7_short,"GAD-7 answered as adaptive short form (1 = items 3 to 7 not asked, scored 0)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,phq9_pos,PHQ-9 screen positive (total 10 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,gad7_pos,GAD-7 screen positive (total 10 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,ptsd5_pos,PC-PTSD-5 screen positive (total 3 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,auditc_pos,AUDIT-C above low risk (total 4 or more),nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,fm_informal,"Borrowed from an informal lender in last 3 months (1 yes, 0 no, blank = not answered or prefer not to say)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,fm_security_any,"A lender held at least one item as security (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,fm_strain,"Money strain: ran out of money several times or more than a quarter of pay on repayments (1 yes, 0 no)",nominal,1=Yes; 0=No,,derived,calculated in the database view
+student_screen,sr_count,Number of stressors ticked (0 to 3),scale,,,derived,calculated in the database view
+delphi,response_id,Response ID,nominal,,,meta,
+delphi,submitted_at,Date and time submitted,scale,,,meta,
+delphi,grp,Respondent group,nominal,,,meta,
+delphi,wave,Wave,nominal,,,meta,
+delphi,context,Check-in context,nominal,,,meta,
+delphi,unit_code,Unit group code,nominal,,,meta,
+delphi,anon_code,"Private code (links baseline, check-ins, pulses, feedback)",nominal,,,meta,
+delphi,protocol_version,Protocol version live when collected,nominal,,,meta,
+delphi,risk_level,"Risk level shown by the app (0 low, 1 moderate, 2 high)",ordinal,0=Low; 1=Moderate; 2=High,,meta,
+delphi,zone,"Wellness zone shown by the app (1 green, 2 yellow, 3 orange, 4 red)",ordinal,1=Coping well; 2=Feeling the strain; 3=Struggling; 4=Needs care now,,meta,
+delphi,dl_round,Delphi round,ordinal,1=Round 1; 2=Round 2; 3=Round 3,Which round is this?,item,
+delphi,dl_role,Delphi panellist role,nominal,"1=Psychiatrist, psychologist or counsellor; 2=Mental health or general nurse; 3=Medical officer or clinician; 4=Chaplain or faith leader; 5=Welfare officer or social worker; 6=Commander or administrator; 7=Legal, ethics or data-protection expert; 8=ICT or records officer; 9=DCHS lecturer, student counsellor, registrar or admissions officer; 10=Student or family representative; 11=Other",Your main role,item,
+delphi,dl1,"Delphi: A private first check on the phone, with a result that only the person",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"A private first check on the phone, with a result that only the person sees.",item,
+delphi,dl2,Delphi: A nurse call-back within a set time after a request.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,A nurse call-back within a set time after a request.,item,
+delphi,dl3,Delphi: Same-day contact for a person whose answers suggest high risk.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,Same-day contact for a person whose answers suggest high risk.,item,
+delphi,dl4,Delphi: An anonymous ask-the-nurse box.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,An anonymous ask-the-nurse box.,item,
+delphi,dl5,"Delphi: A welfare navigator for money, housing and family problems.",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"A welfare navigator for money, housing and family problems.",item,
+delphi,dl6,"Delphi: Short sleep, stress and money lessons in the app.",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"Short sleep, stress and money lessons in the app.",item,
+delphi,dl7,Delphi: Peer champions who introduce the service to others.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,Peer champions who introduce the service to others.,item,
+delphi,dl8,Delphi: A version for spouses and adult family members.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,A version for spouses and adult family members.,item,
+delphi,dl9,Delphi: A written safety protocol for thoughts of suicide or self-harm.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,A written safety protocol for thoughts of suicide or self-harm.,item,
+delphi,dl10,Delphi: The limits of confidentiality explained before the check starts.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,The limits of confidentiality explained before the check starts.,item,
+delphi,dl11,"Delphi: Commanders receive anonymous group figures only, never individual resu",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"Commanders receive anonymous group figures only, never individual results.",item,
+delphi,dl12,"Delphi: Protected time to do the check, with answers staying private.",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"Protected time to do the check, with answers staying private.",item,
+delphi,dl13,Delphi: A written no-penalty route for people who come forward about a loan wh,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,A written no-penalty route for people who come forward about a loan where a lender holds their card.,item,
+delphi,dl14,"Delphi: Regular review of the service by an ethics focal person, with every ch",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"Regular review of the service by an ethics focal person, with every change recorded.",item,
+delphi,dl15,"Delphi: A voluntary wellbeing check for applicants, offered to help them get s",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"A voluntary wellbeing check for applicants, offered to help them get support.",item,
+delphi,dl16,Delphi: The check has no effect on admission decisions.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,The check has no effect on admission decisions.,item,
+delphi,dl17,"Delphi: An applicant can choose to share only a colour (green, amber or red) w",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"An applicant can choose to share only a colour (green, amber or red) with the student-support office.",item,
+delphi,dl18,"Delphi: The check is repeated at orientation, when nothing depends on the answ",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"The check is repeated at orientation, when nothing depends on the answers.",item,
+delphi,dl19,"Delphi: The college tracks, without names, whether students who left had conta",ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,"The college tracks, without names, whether students who left had contact with support.",item,
+delphi,dl20,Delphi: A written agreement that results will not be used for admission or dis,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,A written agreement that results will not be used for admission or discipline.,item,
+delphi,dl21,Delphi: Asking about informal borrowing and cards held as security.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,Asking about informal borrowing and cards held as security.,item,
+delphi,dl22,Delphi: Letting people name their own stressors in their own words.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,Letting people name their own stressors in their own words.,item,
+delphi,dl23,Delphi: A one-minute weekly pulse to spot changes early.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,A one-minute weekly pulse to spot changes early.,item,
+delphi,dl24,Delphi: Group-level early warning that triggers a pre-agreed response.,ordinal,1=1 Not important; 2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9 Essential,Group-level early warning that triggers a pre-agreed response.,item,
+delphi,dl_add,Delphi: suggested addition,nominal,"(free text, see v_free_text)","What important feature, rule or safeguard is missing?",text,not in the flat view
+delphi,dl_remove,Delphi: suggested removal,nominal,"(free text, see v_free_text)","What should be removed or changed, and why?",text,not in the flat view
