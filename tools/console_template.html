@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Salama Console</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#f4f6f5;--card:#fff;--ink:#17211f;--muted:#5a6a66;--line:#d9e1de;--brand:#0f6b63;--brand-ink:#fff;--soft:#e1f1ee;--r:#b42318;--y:#8a6a00;--ysoft:#fbf1cf;--g:#2f855a}
+@media (prefers-color-scheme: dark){:root{--bg:#0e1514;--card:#16201e;--ink:#e8f0ee;--muted:#9db0ab;--line:#2a3a37;--brand:#3fb5a7;--brand-ink:#06201d;--soft:#16302c;--r:#ff8a7d;--y:#f0c94a;--ysoft:#3a3010;--g:#6fd3a0}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--brand);color:var(--brand-ink);padding:10px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}header b{flex:1}
+nav{display:flex;gap:4px;flex-wrap:wrap;padding:8px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+nav button{border:0;background:none;padding:8px 12px;border-radius:8px;font:inherit;color:var(--ink);cursor:pointer}nav button.on{background:var(--soft);color:var(--brand);font-weight:700}
+main{max-width:1100px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+h1{font-size:1.3rem;margin:.2em 0}h2{font-size:1.05rem;margin:.2em 0 .5em}.muted{color:var(--muted)}.small{font-size:.85rem}
+.btn{font:inherit;cursor:pointer;border:1px solid var(--brand);background:var(--brand);color:var(--brand-ink);border-radius:8px;padding:7px 14px;font-weight:600}.btn.sec{background:none;color:var(--brand)}
+input,select,textarea{font:inherit;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);max-width:100%}textarea{width:100%}
+table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{border-top:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--card)}
+.scroll{overflow:auto;max-height:460px}.pill{display:inline-block;border-radius:99px;padding:1px 9px;font-size:.78rem;font-weight:650;background:var(--soft);color:var(--brand)}
+.pill.hi{background:var(--r);color:#fff}.pill.mid{background:var(--ysoft);color:var(--y)}.err{color:var(--r);font-weight:600}
+.banner{background:var(--ysoft);color:var(--y);padding:8px 14px;border-radius:8px;margin:10px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.stat{background:var(--soft);border-radius:10px;padding:10px}.stat b{display:block;font-size:1.5rem}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.link{border:0;background:none;color:var(--brand);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+.qgrid{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:16px;align-items:start}@media(max-width:760px){.qgrid{grid-template-columns:1fr}}
+.case{display:grid;grid-template-columns:1fr auto;grid-template-areas:"cc due" "chip chip" "sc stt";gap:4px 10px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--g);border-radius:10px;padding:10px 12px;margin:0 0 10px;font:inherit;color:var(--ink);cursor:pointer}
+.case.hi{border-left-color:var(--r)}.case.mid{border-left-color:var(--y)}.case.sel{outline:2px solid var(--brand)}.case .cc{grid-area:cc;font-family:ui-monospace,Menlo,monospace;font-size:.85rem}.case .due{grid-area:due;font-family:ui-monospace,Menlo,monospace;font-size:.78rem;text-align:right}.case .due.od{color:var(--r);font-weight:700}
+.case .chip{grid-area:chip}.case .sc{grid-area:sc;font-size:.78rem;color:var(--muted)}.case .stt{grid-area:stt;font-size:.78rem;color:var(--brand);text-align:right}
+.chip{display:block;font-family:ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.06em;padding:4px 10px;border-radius:4px}.chip.hi{background:#f6d5d0;color:#9a2a1c}.chip.mid{background:#f5e1b8;color:#7a5a00}.chip.lo{background:#d8ead9;color:#2f6a47}
+@media (prefers-color-scheme: dark){.chip.hi{background:#4a1e19;color:#ffb4a8}.chip.mid{background:#3a3010;color:#f0c94a}.chip.lo{background:#16302c;color:#6fd3a0}}
+.scores{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}.qwho{margin:0 0 10px}.qhead h1{margin-bottom:2px}
+body.embed header,body.embed #demoBar,body.embed nav{display:none}body.embed main{padding:8px 4px}
+</style>
+</head>
+<body>
+<header><b>Salama Console</b><span data-langsw></span><span id="who" class="small"></span><button class="btn sec" id="out" style="color:inherit;border-color:currentColor" hidden>Sign out</button></header>
+<div id="demoBar" class="banner" hidden>Demo mode: this console reads the data stored in this browser only. Connect Supabase in config.js for the real service.</div>
+<nav id="nav" hidden></nav>
+<main id="main"></main>
+<script src="config.js"></script>
+<script src="lang_sw.js"></script>
+<script src="lang.js"></script>
+<script>/*__INJECT__*/</script>
+<script>/*__SHARED__*/</script>
+<script>
+"use strict";
+const CODEBOOK = /*__CODEBOOK__*/"";
+const $m = document.getElementById("main"), E = Util.esc;
+const QP = new URLSearchParams(location.search); if (QP.get("embed")) document.body.classList.add("embed");
+let SESSION = Store.get("salama_staff_session", null), ROLE = null, TAB = QP.get("tab") || null;
+const VIEWS = { baseline_personnel: "v_baseline_personnel", baseline_family: "v_baseline_family", checkin: "v_checkin", pulse: "v_pulse",
+  informant: "v_informant", usability_end: "v_usability_end", student_screen: "v_student_screen", delphi: "v_delphi" };
+const EXTRA = ["v_free_text", "v_stressor_monthly", "v_service_requests", "v_engagement_weekly", "v_early_warning", "v_signals_fortnightly", "v_unit_report", "v_prepost",
+  "v_participant_summary", "v_ask_topics_monthly", "v_callback_reasons_monthly", "v_student_outcomes", "v_student_paired", "v_student_cohort", "v_delphi_consensus"];
+
+/* ---------- backend ---------- */
+const Con = {
+  demo: CFG.BACKEND === "demo",
+  async login(email, pw) {
+    const r = await fetch(`${CFG.SUPABASE_URL}/auth/v1/token?grant_type=password`, { method: "POST", headers: { apikey: CFG.SUPABASE_ANON_KEY, "Content-Type": "application/json" }, body: JSON.stringify({ email, password: pw }) });
+    if (!r.ok) throw new Error("Sign-in failed. Check the email and password."); const j = await r.json();
+    SESSION = { token: j.access_token, refresh: j.refresh_token, email, at: Date.now(), exp: Date.now() + (j.expires_in || 3600) * 1000 - 60000 }; Store.set("salama_staff_session", SESSION);
+  },
+  async refresh() {
+    if (!SESSION || Date.now() < SESSION.exp) return;
+    const r = await fetch(`${CFG.SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`, { method: "POST", headers: { apikey: CFG.SUPABASE_ANON_KEY, "Content-Type": "application/json" }, body: JSON.stringify({ refresh_token: SESSION.refresh }) });
+    if (!r.ok) { SESSION = null; Store.del("salama_staff_session"); throw new Error("Session ended. Please sign in again."); }
+    const j = await r.json(); SESSION = Object.assign(SESSION, { token: j.access_token, refresh: j.refresh_token, exp: Date.now() + (j.expires_in || 3600) * 1000 - 60000 }); Store.set("salama_staff_session", SESSION);
+  },
+  async rest(path, opt) {
+    await this.refresh(); opt = opt || {};
+    const r = await fetch(`${CFG.SUPABASE_URL}/rest/v1/${path}`, { method: opt.method || "GET", headers: Object.assign({ apikey: CFG.SUPABASE_ANON_KEY, Authorization: "Bearer " + SESSION.token, "Content-Type": "application/json" }, opt.headers || {}), body: opt.body ? JSON.stringify(opt.body) : undefined });
+    if (!r.ok) throw new Error(`${r.status}: ${(await r.text()).slice(0, 200)}`);
+    return opt.text ? r.text() : (r.status === 204 ? null : r.json());
+  },
+  async role() { if (this.demo) return "admin"; const j = await this.rest("staff?select=role"); return j[0] ? j[0].role : null; },
+  async requests() {
+    if (this.demo) return Demo.db().service_requests.slice().sort((a, b) => b.created_at.localeCompare(a.created_at));
+    return this.rest("service_requests?select=*&order=created_at.desc&limit=300");
+  },
+  async update(id, patch) {
+    if (this.demo) { const d = Demo.db(), r = d.service_requests.find(x => x.id === id); const now = new Date().toISOString(); Object.assign(r, patch);
+      if (patch.status && patch.status !== "new" && !r.first_contact_at) r.first_contact_at = now; if (patch.status === "visit_completed" && !r.visit_completed_at) r.visit_completed_at = now;
+      if (patch.nurse_reply) { r.replied_at = now; if (!r.first_contact_at) r.first_contact_at = now; if (r.status === "new") r.status = "contacted"; } Demo.save(d); return; }
+    await this.rest(`service_requests?id=eq.${id}`, { method: "PATCH", body: patch, headers: { Prefer: "return=minimal" } });
+  },
+  async view(name, q) { return this.rest(`${name}?select=*${q || ""}`); },
+  async csv(name) {
+    const ord = ["v_free_text"].concat(Object.values(VIEWS)).includes(name) ? "&order=submitted_at.asc" : "";
+    return this.rest(`${name}?select=*${ord}`, { text: true, headers: { Accept: "text/csv" } });
+  }
+};
+
+/* ---------- helpers ---------- */
+const fmt = v => v === null || v === undefined ? "" : typeof v === "object" ? JSON.stringify(v) : String(v);
+const table = (rows, cols) => !rows.length ? `<p class="muted">Nothing to show yet (groups with fewer than 10 people are hidden).</p>` :
+  `<div class="scroll"><table><thead><tr>${(cols || Object.keys(rows[0])).map(c => `<th>${E(c)}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${(cols || Object.keys(rows[0])).map(c => `<td>${E(fmt(r[c]))}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+const hrs = (a, b) => a && b ? (new Date(b) - new Date(a)) / 36e5 : null;
+const median = xs => { xs = xs.filter(x => x !== null).sort((a, b) => a - b); if (!xs.length) return null; const m = xs.length >> 1; return xs.length % 2 ? xs[m] : (xs[m - 1] + xs[m]) / 2; };
+const ago = iso => { const h = hrs(iso, new Date()); return h < 1 ? Math.round(h * 60) + " min" : h < 48 ? Math.round(h) + " h" : Math.round(h / 24) + " d"; };
+
+/* ---------- shell ---------- */
+const TABS = { nurse: ["queue", "help"], researcher: ["dash", "exports", "outcomes", "changes", "help"], welfare: ["support", "lookup", "help"], interviewer: ["lookup", "help"],
+  admin: ["queue", "support", "lookup", "dash", "exports", "outcomes", "changes", "audit", "help"] };
+const TABNAME = { queue: "Nurse queue", dash: "Service and early warning", exports: "Exports for jamovi", outcomes: "College outcomes", changes: "Change log", support: "College support", lookup: "Colour look-up", audit: "Look-up audit", help: "Help" };
+async function boot() {
+  document.getElementById("demoBar").hidden = !Con.demo;
+  if (!Con.demo && !SESSION) return loginView();
+  try { ROLE = await Con.role(); } catch (e) { return loginView(e.message); }
+  if (!ROLE) return loginView("This account has no role. Ask the administrator to run 04_make_staff.sql.");
+  document.getElementById("who").textContent = Con.demo ? "demo" : `${SESSION.email} (${ROLE})`; const o = document.getElementById("out"); o.hidden = Con.demo; o.onclick = () => { SESSION = null; Store.del("salama_staff_session"); location.reload(); };
+  const nav = document.getElementById("nav"); nav.hidden = false; const tabs = TABS[ROLE]; TAB = TAB || tabs[0];
+  nav.innerHTML = tabs.map(t => `<button data-t="${t}" class="${t === TAB ? "on" : ""}">${TABNAME[t]}</button>`).join("");
+  nav.onclick = e => { const b = e.target.closest("button"); if (b) { TAB = b.dataset.t; boot(); } };
+  ({ queue: queueView, dash: dashView, exports: exportsView, outcomes: outcomesView, changes: changesView, support: supportView, lookup: lookupView, audit: auditView, help: helpView })[TAB]();
+}
+function loginView(msg) {
+  document.getElementById("nav").hidden = true;
+  $m.innerHTML = `<div class="card" style="max-width:380px;margin:40px auto"><h1>Staff sign in</h1><p class="small muted">For nurses, researchers and administrators only.</p>
+  <p><input id="em" type="email" placeholder="Email" autocomplete="username" style="width:100%"></p><p><input id="pw" type="password" placeholder="Password" autocomplete="current-password" style="width:100%"></p>
+  <p class="err" id="le">${E(msg || "")}</p><button class="btn" id="li">Sign in</button></div>`;
+  document.getElementById("li").onclick = async () => { try { await Con.login(document.getElementById("em").value.trim(), document.getElementById("pw").value); boot(); } catch (e) { document.getElementById("le").textContent = e.message; } };
+}
+
+/* ---------- nurse console: case list on the left, the selected case on the right ---------- */
+const AccessLog = {
+  list() { return Store.get("salama_demo_access", []); },
+  add(action, ref) { if (!Con.demo) return; const l = this.list(); l.unshift({ at: new Date().toISOString(), who: "Nurse (demo)", action, ref }); Store.set("salama_demo_access", l.slice(0, 200)); }
+};
+const STATUS_TXT = { new: "New", contacted: "Contacted", visit_booked: "Visit booked", visit_completed: "Seen", closed: "Closed", unreachable: "Could not reach" };
+const fmtDur = ms => { const a = Math.abs(ms), h = Math.floor(a / 36e5), m = Math.floor((a % 36e5) / 6e4); return h >= 48 ? Math.floor(h / 24) + "d " + (h % 24) + "h" : h + "h " + String(m).padStart(2, "0") + "m"; };
+function dueText(r) {
+  if (r.status !== "new") return STATUS_TXT[r.status] ? STATUS_TXT[r.status].toLowerCase() : r.status;
+  const target = new Date(r.created_at).getTime() + (r.urgency === "same_day" ? CFG.CALLBACK_HOURS_HIGH * 36e5 : CFG.CALLBACK_DAYS_ROUTINE * 864e5); const d = target - Date.now();
+  return d < 0 ? `overdue ${fmtDur(d)}` : `in ${fmtDur(d)}`;
+}
+const scoreLine = s => { s = s || {}; const o = []; if (s.phq9 != null) o.push("PHQ-9 " + s.phq9); if (s.gad7 != null) o.push("GAD-7 " + s.gad7); if (s.ptsd5 != null) o.push("PC-PTSD-5 " + s.ptsd5 + "/5"); if (s.auditc != null) o.push("AUDIT-C " + s.auditc); return o.join(" · ") || "No scores shared"; };
+function exampleCases() {
+  const now = Date.now(), H = 36e5, mk = (i, code, urg, risk, status, hAgo, sc, extra) => Object.assign({ id: "ex-" + i, client_uuid: "ex-" + i, example: true, ticket_code: code, urgency: urg, risk_level: risk, status, kind: "callback", reason: "mental_health", unit_code: "DCHS-STU",
+    created_at: new Date(now - hAgo * H).toISOString(), shared_scores: sc, contact_hint: "Example only. No real person.", message: "" }, extra || {});
+  return [mk(1, "T-EX3M7T82", "same_day", 2, "new", 9.25, { phq9: 11, auditc: 8 }), mk(2, "T-EX9X2B14", "same_day", 2, "new", 1.8, { phq9: 21, gad7: 14 }),
+    mk(3, "T-EX7H4C36", "routine", 1, "contacted", 30, { auditc: 7, phq9: 8 }, { first_contact_at: new Date(now - 24 * H).toISOString() }), mk(4, "T-EX2R8W47", "routine", 1, "visit_completed", 60, { ptsd5: 4, gad7: 9 }, { first_contact_at: new Date(now - 50 * H).toISOString(), visit_completed_at: new Date(now - 30 * H).toISOString() }),
+    mk(5, "T-EX6A1Q05", "routine", 1, "visit_booked", 50, { phq9: 12, gad7: 11 }, { first_contact_at: new Date(now - 40 * H).toISOString() }), mk(6, "T-EX5K9D60", "routine", 0, "closed", 90, { phq9: 6 }, { first_contact_at: new Date(now - 80 * H).toISOString() })];
+}
+async function queueView() {
+  let rows; try { rows = await Con.requests(); } catch (e) { $m.innerHTML = `<p class="err">${E(e.message)}</p>`; return; }
+  const ST = ["new", "contacted", "visit_booked", "visit_completed", "closed", "unreachable"];
+  const sorted = rows.slice().sort((a, b) => ((a.status === "new") !== (b.status === "new") ? (a.status === "new" ? -1 : 1) : 0) || (b.urgency === "same_day") - (a.urgency === "same_day") || (b.risk_level || 0) - (a.risk_level || 0) || a.created_at.localeCompare(b.created_at));
+  const openN = sorted.filter(r => !["closed", "unreachable", "visit_completed"].includes(r.status)).length;
+  const chip = r => r.risk_level === 2 ? ["HIGH", "hi"] : r.risk_level === 1 ? ["MODERATE", "mid"] : ["LOW", "lo"];
+  $m.innerHTML = `<div class="qhead"><h1>Nurse counsellor console</h1><p class="muted small">Requests arrive here with a private code only. Each case shows only what the person chose to share. High-risk cases stay at the top until a nurse has been in touch. Contact times are stamped by the database when you change a status or reply, so they cannot be edited by hand.</p></div>
+  <div class="qwho small muted">${Con.demo ? "Signed in as Nurse counsellor (demo)" : E(ROLE)} · ${openN} open${Con.demo && !rows.some(r => r.example) ? ` · <button class="link" id="exLoad">Load 6 example cases</button>` : ""}${Con.demo && rows.some(r => r.example) ? ` · <button class="link" id="exClear">Remove example cases</button>` : ""}</div>
+  <div class="qgrid"><div id="qlist">${sorted.map(r => { const [t, k] = chip(r); return `<button class="case ${k}" data-id="${E(r.id)}"><span class="cc">${E(r.ticket_code)}</span><span class="chip ${k}">${t}</span><span class="due ${/overdue/.test(dueText(r)) ? "od" : ""}">${dueText(r)}</span><span class="sc">${E(scoreLine(r.shared_scores))}</span><span class="stt">${STATUS_TXT[r.status] || E(r.status)}</span></button>`; }).join("") || '<div class="card muted">The queue is empty. Make a request in the Student app tab, or load the example cases.</div>'}
+    <div class="card"><h2>Access log</h2><p class="small muted">Every open and change is recorded.</p><div id="alog"></div></div></div>
+  <div id="qdetail"><div class="card"><h2>Select a case</h2><p class="small muted">Choose a request on the left. Opening it writes an entry to the access log.</p></div></div></div>`;
+  const paintLog = () => { const el = document.getElementById("alog"); if (!Con.demo) { el.innerHTML = '<p class="small muted">Changes are stamped by the database with who and when (handled by, first contact, replied, visit). Opening a case is not recorded in this version.</p>'; return; }
+    const l = AccessLog.list().slice(0, 8); el.innerHTML = l.length ? l.map(x => `<div class="small"><span class="mono">${new Date(x.at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span> ${E(x.action)} <b>${E(x.ref)}</b></div>`).join("") : '<p class="small muted">No entries yet. Open a case to create one.</p>'; };
+  paintLog();
+  const ex = document.getElementById("exLoad"); if (ex) ex.onclick = () => { const d = Demo.db(); d.service_requests = d.service_requests.concat(exampleCases()); Demo.save(d); queueView(); };
+  const exc = document.getElementById("exClear"); if (exc) exc.onclick = () => { const d = Demo.db(); d.service_requests = d.service_requests.filter(r => !r.example); Demo.save(d); queueView(); };
+  const open = id => {
+    const r = rows.find(x => String(x.id) === id); if (!r) return; AccessLog.add("opened case", r.ticket_code); paintLog();
+    document.querySelectorAll(".case").forEach(b => b.classList.toggle("sel", b.dataset.id === id));
+    const [t, k] = chip(r); const sc = r.shared_scores || {};
+    document.getElementById("qdetail").innerHTML = `<div class="card"><div class="row"><h2 style="margin:0">${E(r.ticket_code)}</h2><span class="chip ${k}">${t}</span><span class="pill">${r.urgency === "same_day" ? "Same day" : "Routine"}</span><span class="pill">${E(({ callback: "Call-back", ask_nurse: "Question", welfare_help: "Welfare" })[r.kind] || r.kind)}${r.reason ? " · " + E(String(r.reason).replace("_", " ")) : ""}</span></div>
+      <p class="small muted">Received ${ago(r.created_at)} ago · ${E(r.unit_code || "no unit")} · ${dueText(r)}${r.risk_level === 2 ? " · A clinician must confirm or adjust the high-risk flag" : ""}</p>
+      <div class="scores">${["phq9:PHQ-9", "gad7:GAD-7", "ptsd5:PC-PTSD-5", "auditc:AUDIT-C"].map(s => { const [key, lab] = s.split(":"); return `<div class="stat"><b>${sc[key] == null ? "-" : sc[key]}</b>${lab}</div>`; }).join("")}</div>
+      ${r.contact_hint ? `<p><b>How to reach them:</b> ${E(r.contact_hint)}</p>` : ""}${r.message ? `<p><b>Message:</b> ${E(r.message)}</p>` : ""}${r.nurse_reply ? `<p class="small"><b>Reply already sent:</b> ${E(r.nurse_reply)}</p>` : ""}
+      <p class="small muted">Suggested first step: ${r.risk_level === 2 ? "same-day call-back, confirm safety, offer a clinician visit within 48 hours." : r.risk_level === 1 ? "confidential visit within 7 days, re-check in 2 weeks, offer self-help tips." : "self-help tips and a re-check in 4 weeks."}</p>
+      <div class="row" data-card><select data-st>${ST.map(s => `<option value="${s}" ${s === r.status ? "selected" : ""}>${STATUS_TXT[s]}</option>`).join("")}</select>
+      <input data-reply placeholder="Reply shown in the app" style="flex:1;min-width:200px" maxlength="2000"><button class="btn" data-save>Save</button></div></div>`;
+    document.querySelector("[data-save]").onclick = async () => {
+      const card = document.querySelector("[data-card]"), patch = { status: card.querySelector("[data-st]").value }; const rp = card.querySelector("[data-reply]"); if (rp.value.trim()) patch.nurse_reply = rp.value.trim();
+      try { if (r.example) { r.status = patch.status; const d = Demo.db(); const x = d.service_requests.find(q => q.id === r.id); if (x) { x.status = patch.status; if (!x.first_contact_at && patch.status !== "new") x.first_contact_at = new Date().toISOString(); Demo.save(d); } } else await Con.update(r.id, patch);
+        AccessLog.add(patch.nurse_reply ? "replied on case" : "changed status to " + patch.status + " on", r.ticket_code); queueView(); } catch (er) { alert(er.message); } };
+  };
+  document.getElementById("qlist").onclick = e => { const b = e.target.closest(".case"); if (b) open(b.dataset.id); };
+}
+
+/* ---------- service metrics and early warning ---------- */
+async function dashView() {
+  $m.innerHTML = `<h1>Service, engagement and early warning</h1><p class="muted small">Group figures only. Cells under 10 people are hidden by the database. Never release adjacent groups together with totals.</p><div id="d">Loading...</div>`;
+  const d = document.getElementById("d");
+  if (Con.demo) {
+    const rows = await Con.requests(); const cf = rows.filter(r => r.first_contact_at); const h = cf.map(r => hrs(r.created_at, r.first_contact_at));
+    const within = rows.filter(r => r.first_contact_at && (r.urgency === "same_day" ? hrs(r.created_at, r.first_contact_at) <= CFG.CALLBACK_HOURS_HIGH : hrs(r.created_at, r.first_contact_at) <= CFG.CALLBACK_DAYS_ROUTINE * 24));
+    d.innerHTML = `<div class="grid"><div class="stat"><b>${rows.length}</b>requests</div><div class="stat"><b>${median(h) === null ? "-" : median(h).toFixed(1) + " h"}</b>median time to first contact</div>
+      <div class="stat"><b>${rows.length ? Math.round(100 * within.length / rows.length) + "%" : "-"}</b>contacted within target</div><div class="stat"><b>${rows.filter(r => r.visit_completed_at).length}</b>visits completed</div></div>
+      <p class="banner">Early-warning, engagement and student cohort reports are calculated by the database. Connect Supabase to see them.</p>`; return;
+  }
+  const sections = [["Service performance by unit", "v_service_summary", ""], ["Weekly engagement", "v_engagement_weekly", "&order=week_start.desc&limit=60"],
+    ["Early warning: groups where struggling-or-worse has risen 10 points above their usual", "v_signals_fortnightly", "&order=fortnight_start.desc&limit=60"],
+    ["Stressors people tick themselves, by month", "v_stressor_monthly", "&order=month.desc&limit=100"], ["What people ask the nurse about", "v_ask_topics_monthly", "&order=month.desc&limit=60"],
+    ["Call-back reasons", "v_callback_reasons_monthly", "&order=month.desc&limit=60"], ["Before and after by unit", "v_prepost", ""],
+    ["DCHS student cohorts (support planning only, never for judging or choosing between students)", "v_student_cohort", "&order=month.desc&limit=60"]];
+  let out = "";
+  for (const [t, v, q] of sections) { try { out += `<div class="card"><h2>${E(t)}</h2>${table(await Con.view(v, q))}</div>`; } catch (e) { out += `<div class="card"><h2>${E(t)}</h2><p class="err small">${E(e.message)}</p></div>`; } }
+  d.innerHTML = out;
+}
+
+/* ---------- exports ---------- */
+async function exportsView() {
+  const names = Object.values(VIEWS).concat(EXTRA);
+  $m.innerHTML = `<h1>Exports for jamovi</h1><p class="muted small">Each file is a flat table of numbers, one row per submission. Open the CSV in jamovi (File > Open). The codebook lists every variable, its label, its measure type and its value labels. Use the Python tool in tools/ to make a .sav file that carries labels into jamovi automatically.</p>
+  <div class="card"><div class="row"><button class="btn" id="cb">Download codebook (CSV)</button></div></div>
+  <div class="card"><h2>Data files</h2>${names.map(n => `<div class="row" style="padding:4px 0"><button class="btn sec" data-v="${n}">Download</button><code>${n}</code></div>`).join("")}</div>
+  <p class="small muted" id="exMsg"></p>`;
+  document.getElementById("cb").onclick = () => download("codebook.csv", CODEBOOK);
+  $m.onclick = async e => {
+    const b = e.target.closest("[data-v]"); if (!b) return; const n = b.dataset.v, msg = document.getElementById("exMsg"); msg.textContent = "Preparing " + n + "...";
+    try {
+      if (Con.demo) {
+        const key = Object.entries(VIEWS).find(([, v]) => v === n); if (!key) { msg.textContent = "Demo mode exports the questionnaire tables only."; return; }
+        const rows = Demo.db().responses.filter(r => r.form === key[0]).map(r => flattenRow(key[0], r)); const cols = rows.length ? Object.keys(rows[0]) : META_COLS.concat(flatItems(key[0]).map(i => i.id), derivedColumns(key[0]));
+        download(n + ".csv", toCSV(rows, cols)); msg.textContent = `${rows.length} rows exported.`;
+      } else { const t = await Con.csv(n); download(n + ".csv", "﻿" + t); msg.textContent = "Downloaded " + n + ".csv"; }
+    } catch (er) { msg.textContent = er.message; }
+  };
+}
+
+/* ---------- DCHS outcomes import (honest broker file) ---------- */
+function outcomesView() {
+  $m.innerHTML = `<h1>College outcomes (honest broker file)</h1>
+  <p class="muted small">After admission, the college's designated registry officer (not a lecturer, examiner or member of any discipline or selection panel) sends a file with only: private code, intake month, outcome status, month of exit (if any) and a broad reason. No names or admission numbers. Paste it here. Rows are added or updated by private code.</p>
+  <div class="card small"><b>Columns:</b> <code>anon_code,intake,status,exit_month,reason</code><br>status: 1 enrolled and continuing, 2 completed the period, 3 deferred, 4 withdrew, 5 discontinued, 6 not admitted.
+  reason: 1 mental health, 2 other health, 3 money or fees, 4 family, 5 academic, 6 discipline, 7 changed plans, 9 unknown. Intake looks like <code>2026-09</code>.</div>
+  <textarea id="csv" rows="8" placeholder="anon_code,intake,status,exit_month,reason&#10;AB3D-7KMN,2026-09,4,3,3"></textarea><p><button class="btn" id="imp">Import</button> <span id="im" class="small"></span></p>`;
+  document.getElementById("imp").onclick = async () => {
+    const msg = document.getElementById("im"); const lines = document.getElementById("csv").value.trim().split(/\r?\n/).filter(Boolean); if (lines[0] && /anon_code/i.test(lines[0])) lines.shift();
+    const rows = [], bad = [];
+    lines.forEach((l, i) => { const [c, intake, st, ex, rs] = l.split(",").map(x => x.trim()); const ok = /^[A-Z0-9]{4}-[A-Z0-9]{4}$/.test(c || "") && /^\d{4}-\d{2}$/.test(intake || "") && /^[1-6]$/.test(st || "");
+      if (!ok) bad.push(i + 1); else rows.push({ anon_code: c, intake, status: +st, exit_month: ex ? +ex : null, reason: rs ? +rs : null }); });
+    if (bad.length) { msg.className = "small err"; msg.textContent = "Fix line(s): " + bad.slice(0, 10).join(", "); return; }
+    if (!rows.length) { msg.textContent = "Nothing to import."; return; }
+    try {
+      if (Con.demo) { const d = Store.get("salama_demo_outcomes", []); rows.forEach(r => { const k = d.findIndex(x => x.anon_code === r.anon_code); if (k >= 0) d[k] = r; else d.push(r); }); Store.set("salama_demo_outcomes", d); }
+      else await Con.rest("cohort_outcomes?on_conflict=anon_code", { method: "POST", body: rows, headers: { Prefer: "resolution=merge-duplicates,return=minimal" } });
+      msg.className = "small"; msg.textContent = rows.length + " row(s) imported.";
+    } catch (e) { msg.className = "small err"; msg.textContent = e.message; }
+  };
+}
+
+/* ---------- change log ---------- */
+async function changesView() {
+  $m.innerHTML = `<h1>Change log</h1><p class="muted small">Every change to the questions, rules or content during the pilot is recorded here with its trigger and who approved it. Change the protocol version in config.js at the same time.</p>
+  <div class="card"><div class="row"><input id="cv" placeholder="Version e.g. P1.1" size="10"><input id="ct" placeholder="Trigger: what you noticed" style="flex:1;min-width:200px"><input id="cc" placeholder="Change made" style="flex:1;min-width:200px"><input id="ca" placeholder="Approved by" size="16"><button class="btn" id="add">Add</button></div><p class="err small" id="ce"></p></div><div class="card" id="cl">Loading...</div>`;
+  const load = async () => { try { const rows = Con.demo ? Store.get("salama_demo_changes", []) : await Con.rest("change_log?select=created_at,protocol_version,trigger_text,change_text,approved_by&order=created_at.desc"); document.getElementById("cl").innerHTML = table(rows); } catch (e) { document.getElementById("cl").innerHTML = `<p class="err">${E(e.message)}</p>`; } };
+  document.getElementById("add").onclick = async () => {
+    const r = { protocol_version: cv.value.trim(), trigger_text: ct.value.trim(), change_text: cc.value.trim(), approved_by: ca.value.trim() };
+    if (!r.protocol_version || r.trigger_text.length < 3 || r.change_text.length < 3 || r.approved_by.length < 2) { ce.textContent = "Fill in all four boxes."; return; }
+    try { if (Con.demo) { const d = Store.get("salama_demo_changes", []); d.unshift(Object.assign({ created_at: new Date().toISOString() }, r)); Store.set("salama_demo_changes", d); } else await Con.rest("change_log", { method: "POST", body: r, headers: { Prefer: "return=minimal" } }); ce.textContent = ""; ["cv", "ct", "cc", "ca"].forEach(i => document.getElementById(i).value = ""); load(); } catch (e) { ce.textContent = e.message; }
+  }; load();
+}
+
+/* ---------- college student-support office (people who chose to share a colour) ---------- */
+const BAND = { 1: ["Green", "pill"], 2: ["Amber", "pill mid"], 3: ["Red", "pill hi"] };
+async function supportView() {
+  let rows; try { rows = Con.demo ? Demo.db().college_sharing.slice().reverse() : await Con.rest("college_sharing?select=id,created_at,ref_text,band,context,status&order=created_at.desc&limit=300"); } catch (e) { $m.innerHTML = `<p class="err">${E(e.message)}</p>`; return; }
+  rows.sort((a, b) => (b.band - a.band) || String(a.created_at).localeCompare(b.created_at));
+  const ST = ["new", "support_offered", "accepted", "declined", "closed"];
+  $m.innerHTML = `<h1>College support office</h1><p class="banner">These people chose to share a colour so that support can be offered. It is a support list, not an assessment or admission criterion. Do not pass it to lecturers, commanders or any panel, and do not record it on selection files.</p>
+  <div class="card"><div class="scroll"><table><thead><tr><th>Who</th><th>Colour</th><th>When</th><th>Stage</th><th>Support status</th><th></th></tr></thead><tbody>${rows.map(r => `<tr data-id="${E(r.id)}"><td>${E(r.ref_text)}</td><td><span class="${BAND[r.band][1]}">${BAND[r.band][0]}</span></td><td>${ago(r.created_at)} ago</td><td>${E(r.context || "")}</td>
+  <td><select>${ST.map(x => `<option ${x === r.status ? "selected" : ""}>${x}</option>`).join("")}</select></td><td><button class="btn sec" data-s>Save</button></td></tr>`).join("") || '<tr><td colspan="6" class="muted">Nobody has shared a colour yet.</td></tr>'}</tbody></table></div></div>`;
+  $m.onclick = async e => { const b = e.target.closest("[data-s]"); if (!b) return; const tr = b.closest("tr"), st = tr.querySelector("select").value;
+    try { if (Con.demo) { const d = Demo.db(); d.college_sharing.find(x => x.id === tr.dataset.id).status = st; Demo.save(d); } else await Con.rest(`college_sharing?id=eq.${tr.dataset.id}`, { method: "PATCH", body: { status: st }, headers: { Prefer: "return=minimal" } }); supportView(); } catch (er) { alert(er.message); } };
+}
+function lookupView() {
+  $m.innerHTML = `<h1>Colour look-up</h1><p class="banner">Shows only a colour, and only for a person who chose to share it. It is not an admission criterion and must not be used to decide who is admitted. Every look-up is recorded.</p>
+  <div class="card"><div class="row"><input id="lr" placeholder="Interview or application number, exactly as the person gave it" style="flex:1;min-width:240px"><button class="btn" id="lg">Look up</button></div><div id="lo" style="margin-top:12px"></div></div>`;
+  document.getElementById("lg").onclick = async () => {
+    const ref = document.getElementById("lr").value.trim(), o = document.getElementById("lo"); if (ref.length < 2) return;
+    try {
+      let hit = null;
+      if (Con.demo) { const r = Demo.db().college_sharing.filter(x => x.ref_text.toLowerCase() === ref.toLowerCase()).pop(); hit = r ? { band: r.band } : null; }
+      else { const j = await Con.rest("rpc/college_colour", { method: "POST", body: { p_ref: ref } }); hit = j && j[0] ? j[0] : null; }
+      o.innerHTML = hit ? `<span class="${BAND[hit.band][1]}" style="font-size:1.2rem;padding:4px 16px">${BAND[hit.band][0]}</span><p class="small muted">${hit.band === 1 ? "No support needs flagged." : hit.band === 2 ? "Offer information or a chat." : "Offer support promptly."} Support only. Not an admission criterion.</p>` : `<p class="muted">No colour shared for that reference. That tells you nothing about the person and must not be read as a concern.</p>`;
+    } catch (e) { o.innerHTML = `<p class="err">${E(e.message)}</p>`; }
+  };
+}
+async function auditView() {
+  let rows; try { rows = Con.demo ? [] : await Con.rest("access_log?select=at,user_id,action,ref_text&order=at.desc&limit=300"); } catch (e) { $m.innerHTML = `<p class="err">${E(e.message)}</p>`; return; }
+  $m.innerHTML = `<h1>Look-up audit</h1><p class="muted small">Who looked up which reference and when. Review it regularly with the ethics focal person.</p><div class="card">${table(rows)}</div>`;
+}
+
+function helpView() {
+  $m.innerHTML = `<h1>Help</h1><div class="card small"><b>Nurses</b><ul><li>Work the queue from the top. Same-day requests are first.</li><li>Changing a status or sending a reply starts the contact clock in the database.</li><li>Replies appear in the person's app under their ticket code. Do not put names or sensitive detail in a reply.</li><li>If someone may be in immediate danger, follow the safety protocol, not the queue.</li></ul>
+  <b>Researchers</b><ul><li>Dashboards show groups of 10 or more people.</li><li>Download CSV files and open them in jamovi. Variable labels and value labels are in the codebook.</li><li>Student data are for research and support planning. They are never shared with the selection panel.</li></ul></div>`;
+}
+boot();
+</script>
+</body>
+</html>
